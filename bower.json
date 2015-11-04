@@ -1,0 +1,15 @@
+{
+  "name": "adapt-tabs",
+  "version": "2.0.0",
+  "framework": "^2.0.0",
+  "displayName" : "Tabs",
+  "component" : "tabs",
+  "description": "Organise content into tab views",
+  "main": "/js/adapt-tabs.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/cgkineo/adapt-tabs"
+}
