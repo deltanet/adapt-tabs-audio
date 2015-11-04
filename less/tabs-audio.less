@@ -1,5 +1,5 @@
-.tabs-component {
-	.tabs-navigation {
+.tabs-audio-component {
+	.tabsAudio-navigation {
 		float: left;
 		width: 20%;
 
@@ -8,14 +8,14 @@
 		}
 	}
 
-	.tabs-navigation-item {
+	.tabsAudio-navigation-item {
 		display: block;
 		margin-bottom: 1px;
 		position: relative;
 		text-decoration: none;
 	}
 
-	.tabs-navigation-item-inner {
+	.tabsAudio-navigation-item-inner {
 		background-color: @item-color;
 		border-radius: 20px 0 0 20px;
 		color: @item-text-color;
@@ -97,7 +97,7 @@
 		}
 	}
 
-	.tabs-content-items {
+	.tabsAudio-content-items {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
@@ -116,41 +116,41 @@
 		}
 	}
 
-	.tabs-content-items-inner {
+	.tabsAudio-content-items-inner {
 		padding: @item-padding;
 	}
 
-	.tab-content-item-title {
+	.tabAudio-content-item-title {
 		margin-bottom: @item-padding;
 	}
 
-	.tab-content-item-body {
+	.tabAudio-content-item-body {
 		margin-bottom: @item-padding;
 	}
 
-	.tabs-content-icon {
+	.tabsAudio-content-icon {
 		display: none;
 	}
 
 	// Top Layout
-	&.tab-layout-top {
-		.tabs-widget {
+	&.tabAudio-layout-top {
+		.tabsAudio-widget {
 			padding-top: 55px;
 			position: relative;
 		}
 
-		.tabs-navigation {
+		.tabsAudio-navigation {
 			float: none;
 			position: absolute;
 			top: 0;
 			width: 100%;
 		}
 
-		.tabs-navigation-item {
+		.tabsAudio-navigation-item {
 			float: left;
 
 			&:last-child {
-				.tabs-navigation-item-inner {
+				.tabsAudio-navigation-item-inner {
 					margin-right: 0;
 
 					.dir-rtl & {
@@ -164,7 +164,7 @@
 			}
 		}
 
-		.tabs-navigation-item-inner {
+		.tabsAudio-navigation-item-inner {
 			border-radius: 20px 20px 0 0;
 			margin-right: 2px;
 
@@ -178,7 +178,7 @@
 			}
 		}
 
-		.tabs-content-items {
+		.tabsAudio-content-items {
 			float: none;
 			overflow-y: auto;
 			width: 100%;
@@ -186,21 +186,21 @@
 	}
 
 	@media all and (max-width: @device-width-medium) {
-		.tabs-navigation {
+		.tabsAudio-navigation {
 			width: 25%;
 		}
 
-		.tabs-navigation-item-inner {
+		.tabsAudio-navigation-item-inner {
 			&:after {
 				display: none;
 			}
 		}
 
-		.tabs-content-items {
+		.tabsAudio-content-items {
 			width: 75%;
 		}
 
-		.tabs-content-icon {
+		.tabsAudio-content-icon {
 			color: @background-color-inverted;
 			display: block;
 			text-align: center;
@@ -217,15 +217,15 @@
 	}
 
 	@media all and (max-width: @device-width-small) {
-		.tabs-navigation {
+		.tabsAudio-navigation {
 			width: 30%;
 		}
 
-		.tabs-content-items {
+		.tabsAudio-content-items {
 			width: 70%;
 		}
 
-		.tabs-content-items-inner {
+		.tabsAudio-content-items-inner {
 			padding: @item-padding/2;
 		}
 	}

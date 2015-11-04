@@ -1,15 +1,15 @@
 {
-  "name": "adapt-tabs",
+  "name": "adapt-tabs-audio",
   "version": "2.0.0",
-  "framework": "^2.0.0",
-  "displayName" : "Tabs",
-  "component" : "tabs",
+  "framework": "2.0.4",
+  "displayName" : "Tabs audio",
+  "component" : "tabs-audio",
   "description": "Organise content into tab views",
-  "main": "/js/adapt-tabs.js",
+  "main": "/js/adapt-tabs-audio.js",
   "keywords": [
     "adapt-plugin",
     "adapt-component"
   ],
   "license": "GPL-3.0",
-  "homepage": "https://github.com/cgkineo/adapt-tabs"
+  "homepage": "https://github.com/deltanet/adapt-tabs-audio"
 }

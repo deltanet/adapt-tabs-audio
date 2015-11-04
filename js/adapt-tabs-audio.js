@@ -3,10 +3,10 @@ define(function(require) {
 	var ComponentView = require('coreViews/componentView');
 	var Adapt = require('coreJS/adapt');
 
-	var Tabs = ComponentView.extend({
+	var TabsAudio = ComponentView.extend({
 
 		events: {
-			'click .tabs-navigation-item': 'onTabItemClicked'
+			'click .tabsAudio-navigation-item': 'onTabItemClicked'
 		},
 		
 		preRender: function() {
@@ -21,17 +21,17 @@ define(function(require) {
 		},
 
 		setLayout: function() {
-			this.$el.removeClass("tab-layout-left tab-layout-top");
+			this.$el.removeClass("tabAudio-layout-left tabAudio-layout-top");
 			if (Adapt.device.screenSize == 'large') {
 				var tabLayout = this.model.get('_tabLayout');
-				this.$el.addClass("tab-layout-" + tabLayout);
+				this.$el.addClass("tabAudio-layout-" + tabLayout);
 				if (tabLayout === 'top') {
 					this.setTabLayoutTop();
 				} else if (tabLayout === 'left') {
 					this.setTabLayoutLeft();
 				}                
 			} else {
-				this.$el.addClass("tab-layout-left");
+				this.$el.addClass("tabAudio-layout-left");
 				this.setTabLayoutLeft();
 			}        	
 		},
@@ -40,13 +40,13 @@ define(function(require) {
 			var itemsLength = this.model.get('_items').length;
 			var itemWidth = 100 / itemsLength;
 
-			this.$('.tabs-navigation-item').css({
+			this.$('.tabsAudio-navigation-item').css({
 				width: itemWidth + '%'
 			});
 		},
 
 		setTabLayoutLeft: function() {
-			this.$('.tabs-navigation-item').css({
+			this.$('.tabsAudio-navigation-item').css({
 				width: 100 + '%'
 			});
 		},
@@ -60,7 +60,7 @@ define(function(require) {
 		},
 
 		showContentItemAtIndex: function(index, skipFocus) {
-			var $contentItems = this.$('.tab-content');
+			var $contentItems = this.$('.tabAudio-content');
 
 			$contentItems.removeClass('active').velocity({
 				opacity: 0,
@@ -87,7 +87,7 @@ define(function(require) {
 		},
 
 		setTabSelectedAtIndex: function(index) {
-			var $navigationItem = this.$('.tabs-navigation-item-inner');
+			var $navigationItem = this.$('.tabsAudio-navigation-item-inner');
 			$navigationItem.removeClass('selected').eq(index).addClass('selected visited').attr('aria-label', this.model.get("_items")[index].tabTitle + ". Visited");
 			this.setVisited(index);
 		},
@@ -112,8 +112,8 @@ define(function(require) {
 		
 	});
 	
-	Adapt.register("tabs", Tabs);
+	Adapt.register("tabs-audio", TabsAudio);
 
-	return Tabs;
+	return TabsAudio;
 	
 });

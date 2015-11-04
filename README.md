@@ -1,6 +1,4 @@
-# adapt-tabs
-
-**Tabs** is a C&G Kineo *presentation component*.  
+# adapt-tabs-audio
 
 The component displays a vertically or horizontally stacked list of heading tabs. Each heading is associated with a hidden content panel. Clicking a heading toggles the visibility of its content panel. The first content panel is visible by default. Content panels may contain text and/or an image.
 
@@ -12,7 +10,7 @@ Git clone the component, making sure to delete the hidden **.git** folder from t
 
 ## Settings Overview
 
-The attributes listed below are used in *components.json* to configure **Tabs**, and are properly formatted as JSON in [*example.json*](https://github.com/cgkineo/adapt-tabs/blob/master/example.json).
+The attributes listed below are used in *components.json* to configure **Tabs**, and are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-tabs-audio/blob/master/example.json).
 
 ### Attributes
 
@@ -64,9 +62,9 @@ guide the learner’s interaction with the component.
 
 
 ----------------------------
-**Version number:**  2.0  
-**Framework versions:** 2.0  
-**Author / maintainer:** C&G Kineo  
+**Version number:**  2.0.0
+**Framework versions:** 2.0.4
+**Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   
 **RTL support:** Yes  
 **Cross-platform coverage:** To be confirmed
