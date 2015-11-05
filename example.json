@@ -5,11 +5,11 @@
     "_component": "tabs-audio",
     "_classes": "",
     "_layout":" full",
-    "title": "Tabs",
-    "displayTitle": "Tabs",
+    "title": "Tabs audio",
+    "displayTitle": "Tabs audio",
     "body": "Body text.",
     "instruction": "Select the tabs to find out more.",
-    "_tabLayout": "left",
+    "_tabLayout": "top",
     "_items": [
         {
             "tabTitle": "Tab Title 1",
@@ -48,4 +48,10 @@
             }
         }
     ]
+}
+
+// Accessibility supported courses require ARIA instruction - apply to _globals in course.json
+
+"_tabsAudio": {
+    "ariaRegion": "This component contains selectable tab items. Select an item to display an image with text."
 }

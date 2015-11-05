@@ -67,4 +67,4 @@ guide the learner’s interaction with the component.
 **Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   
 **RTL support:** Yes  
-**Cross-platform coverage:** To be confirmed
+**Authoring tool:** To be confirmed

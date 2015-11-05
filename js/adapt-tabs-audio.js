@@ -69,7 +69,7 @@ define(function(require) {
 				duration: 0,
 				display: 'none'
 			});
-
+			
 			var $contentItem = $contentItems.eq(index);
 			$contentItem.velocity({
 				opacity: 1,

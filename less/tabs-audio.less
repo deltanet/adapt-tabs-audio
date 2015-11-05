@@ -101,15 +101,13 @@
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		background: @background-color;
+		background-color: @background-color;
+		padding-bottom: @component-padding;
 		border: 1px solid @item-color-selected;
 		float: right;
-		max-height: 400px;
-		min-height: 400px;
-		overflow-y: scroll;
+		overflow: auto;
 		position: relative;
 		width: 80%;
-		-webkit-overflow-scrolling: touch;
 
 		.dir-rtl & {
 			float: left;
@@ -126,16 +124,24 @@
 
 	.tabAudio-content-item-body {
 		margin-bottom: @item-padding;
+		width: 48%;
+	    float: left;
+	    padding-right: 20px;
 	}
 
-	.tabsAudio-content-icon {
-		display: none;
+	.tabAudio-content-item-graphic {
+	    width: 48%;
+	    float: left;
+	    padding-bottom: 20px;
+	}
+	.tabAudio-content-item-graphic-inner {
+	    float: right;
 	}
 
 	// Top Layout
 	&.tabAudio-layout-top {
 		.tabsAudio-widget {
-			padding-top: 55px;
+			padding-top: 50px;
 			position: relative;
 		}
 
@@ -180,12 +186,21 @@
 
 		.tabsAudio-content-items {
 			float: none;
-			overflow-y: auto;
+			overflow: auto;
 			width: 100%;
 		}
 	}
 
 	@media all and (max-width: @device-width-medium) {
+		.tabAudio-content-item-body {
+			width: 100%;
+		    padding-right: 0px;
+		}
+
+		.tabAudio-content-item-graphic {
+		    width: 100%;
+		    padding-bottom: 0px;
+		}
 		.tabsAudio-navigation {
 			width: 25%;
 		}
@@ -200,23 +215,18 @@
 			width: 75%;
 		}
 
-		.tabsAudio-content-icon {
-			color: @background-color-inverted;
-			display: block;
-			text-align: center;
-			position: absolute;
-			right: 0;
-			bottom: 0;
-			padding: 3px;
-
-			.dir-rtl & {
-				left: 0;
-				right: auto;
-			}
-		}
 	}
 
 	@media all and (max-width: @device-width-small) {
+		.tabAudio-content-item-body {
+			width: 100%;
+		    padding-right: 0px;
+		}
+
+		.tabAudio-content-item-graphic {
+		    width: 100%;
+		    padding-bottom: 0px;
+		}
 		.tabsAudio-navigation {
 			width: 30%;
 		}
