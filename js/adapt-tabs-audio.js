@@ -56,8 +56,27 @@ define(function(require) {
 			var index = $(event.currentTarget).index();
 			this.showContentItemAtIndex(index);
 			this.setTabSelectedAtIndex(index);
-			this.setVisited($(event.currentTarget).index());			
+			this.setVisited($(event.currentTarget).index());
+
+			var $item = $(event.currentTarget).parent();
+            var currentItem = this.getCurrentItem($item.index());
+
+			///// Audio /////
+            if (this.model.get('_audio')) {
+                // Determine which filetype to play
+                if (Adapt.audio.audioClip[this.model.get('_audio')._channel].canPlayType('audio/ogg')) this.audioFile = currentItem._audio.ogg;
+                if (Adapt.audio.audioClip[this.model.get('_audio')._channel].canPlayType('audio/mpeg')) this.audioFile = currentItem._audio.mp3;
+                // Trigger audio
+                Adapt.trigger('audio:playAudio', this.audioFile, this.model.get('_id'), this.model.get('_audio')._channel);
+            }
+            ///// End of Audio /////
 		},
+
+		///// Audio /////
+		getCurrentItem: function(index) {
+            return this.model.get('_items')[index];
+        },
+        ///// End of Audio /////
 
 		showContentItemAtIndex: function(index, skipFocus) {
 			var $contentItems = this.$('.tabAudio-content');
