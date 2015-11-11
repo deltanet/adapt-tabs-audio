@@ -21,6 +21,7 @@ define(function(require) {
 		},
 
 		setLayout: function() {
+
 			this.$el.removeClass("tabAudio-layout-left tabAudio-layout-top");
 			if (Adapt.device.screenSize == 'large') {
 				var tabLayout = this.model.get('_tabLayout');
@@ -33,7 +34,17 @@ define(function(require) {
 			} else {
 				this.$el.addClass("tabAudio-layout-left");
 				this.setTabLayoutLeft();
-			}        	
+			}
+
+			//var itemCount = this.model.get('_items').length;
+
+			/*
+			if(this.model.get('_items')._graphic && this.model.get('_items')._graphic.src !== "") {
+				this.$('.tabAudio-content-item-body').addClass("tabAudio-body-left");
+			} else {
+				this.$('.tabAudio-content-item-body').addClass("tabAudio-body-full");
+			}
+ */
 		},
 
 		setTabLayoutTop: function() {
