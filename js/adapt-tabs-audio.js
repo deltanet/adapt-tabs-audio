@@ -36,15 +36,6 @@ define(function(require) {
 				this.setTabLayoutLeft();
 			}
 
-			//var itemCount = this.model.get('_items').length;
-
-			/*
-			if(this.model.get('_items')._graphic && this.model.get('_items')._graphic.src !== "") {
-				this.$('.tabAudio-content-item-body').addClass("tabAudio-body-left");
-			} else {
-				this.$('.tabAudio-content-item-body').addClass("tabAudio-body-full");
-			}
- */
 		},
 
 		setTabLayoutTop: function() {
@@ -73,7 +64,7 @@ define(function(require) {
             var currentItem = this.getCurrentItem($item.index());
 
 			///// Audio /////
-            if (this.model.get('_audio')) {
+            if (this.model.has('_audio') && this.model.get('_audio')._isEnabled) {
                 // Determine which filetype to play
                 if (Adapt.audio.audioClip[this.model.get('_audio')._channel].canPlayType('audio/ogg')) this.audioFile = currentItem._audio.ogg;
                 if (Adapt.audio.audioClip[this.model.get('_audio')._channel].canPlayType('audio/mpeg')) this.audioFile = currentItem._audio.mp3;
