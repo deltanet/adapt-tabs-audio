@@ -10,6 +10,8 @@ define(function(require) {
 		},
 		
 		preRender: function() {
+			// Listen for text change on audio extension
+            this.listenTo(Adapt, "audio:changeText", this.replaceText);
 		},
 
 		postRender: function() {
@@ -18,6 +20,10 @@ define(function(require) {
 			this.listenTo(Adapt, 'device:resize', this.setLayout);
 			this.showContentItemAtIndex(0, true);
 			this.setTabSelectedAtIndex(0);
+
+			if (this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled && Adapt.config.get('_reducedText')._isEnabled) {
+				this.replaceText(Adapt.audio.textSize);
+            }
 		},
 
 		setLayout: function() {
@@ -85,7 +91,8 @@ define(function(require) {
 
 			$contentItems.removeClass('active').velocity({
 				opacity: 0,
-				translateY: '20px'
+				translateY: '0px'
+				//translateY: '20px'
 			}, {
 				duration: 0,
 				display: 'none'
@@ -96,7 +103,8 @@ define(function(require) {
 				opacity: 1,
 				translateY: '0'
 			}, {
-				duration: 300,
+				duration: 1000,
+				//duration: 300,
 				display: 'block',
 				complete: _.bind(complete,this)
 			});
@@ -129,7 +137,34 @@ define(function(require) {
 			if (this.getVisitedItems().length == this.model.get('_items').length) {
 				this.setCompletionStatus();
 			}
-		}
+		},
+
+		// Reduced text
+        replaceText: function(value) {
+            // If enabled
+            if (this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled && Adapt.config.get('_reducedText')._isEnabled) {
+                // Change component title and body
+                if(value == 0) {
+                    this.$('.component-title-inner').html(this.model.get('displayTitle')).a11y_text();
+                    this.$('.component-body-inner').html(this.model.get('body')).a11y_text();
+                } else {
+                    this.$('.component-title-inner').html(this.model.get('displayTitleReduced')).a11y_text();
+                    this.$('.component-body-inner').html(this.model.get('bodyReduced')).a11y_text();
+                }
+                // Change each items title and body
+                for (var i = 0; i < this.model.get('_items').length; i++) {
+                    if(value == 0) {
+                    	this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitle);
+                        this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].title);
+                        this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].body);
+                    } else {
+                    	this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitleReduced);
+                        this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced);
+                        this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced);
+                    }
+                }
+            }
+        }
 		
 	});
 	

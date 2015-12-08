@@ -10,6 +10,11 @@
     "body": "Body text.",
     "instruction": "Select the tabs to find out more.",
     "_tabLayout": "top",
+    "displayTitleReduced": "Reduced title",
+    "bodyReduced": "Reduced text",
+    "_reducedText": {
+        "_isEnabled": true
+    },
     "_audio": {
         "_isEnabled": true,
         "_showControls": true,
@@ -17,61 +22,73 @@
         "_channel": 0,
         "_location": "top-right",
         "_media": {
-            "mp3": "course/en/audio/MAC_M1_04.mp3",
-            "ogg": "course/en/audio/MAC_M1_04.ogg"
+            "mp3": "course/en/audio/***.mp3",
+            "ogg": "course/en/audio/***.ogg"
         }
     },
     "_items": [
         {
             "tabTitle": "Tab Title 1",
+            "tabTitleReduced": "1",
             "title": "Tab item 1 title",
+            "titleReduced": "Reduced title 1",
             "body": "This is display text 1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+            "bodyReduced": "Reduced body 1",
             "_graphic": {
                 "alt": "alt text",
                 "src": "course/en/images/tabs.jpg"
             },
             "_audio": {
-                "mp3": "course/en/audio/MAC_M1_04_3.mp3",
-                "ogg": "course/en/audio/MAC_M1_04_3.ogg"
+                "mp3": "course/en/audio/***.mp3",
+                "ogg": "course/en/audio/***.ogg"
             }
         },
         {
             "tabTitle": "Tab Title 2",
+            "tabTitleReduced": "2",
             "title": "Tab item 2 title",
+            "titleReduced": "Reduced title 2",
             "body": "This is display text 2. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+            "bodyReduced": "Reduced body 2",
             "_graphic": {
                 "alt": "alt text",
                 "src": "course/en/images/tabs.jpg"
             },
             "_audio": {
-                "mp3": "course/en/audio/MAC_M1_04_3.mp3",
-                "ogg": "course/en/audio/MAC_M1_04_3.ogg"
+                "mp3": "course/en/audio/***.mp3",
+                "ogg": "course/en/audio/***.ogg"
             }
         },
         {
             "tabTitle": "Tab Title 3",
+            "tabTitleReduced": "3",
             "title": "Tab item 3 title",
+            "titleReduced": "Reduced title 3",
             "body": "This is display text 3. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+            "bodyReduced": "Reduced body 3",
             "_graphic": {
                 "alt": "alt text",
                 "src": "course/en/images/tabs.jpg"
             },
             "_audio": {
-                "mp3": "course/en/audio/MAC_M1_04_3.mp3",
-                "ogg": "course/en/audio/MAC_M1_04_3.ogg"
+                "mp3": "course/en/audio/***.mp3",
+                "ogg": "course/en/audio/***.ogg"
             }
         },
         {
             "tabTitle": "Tab Title 4",
+            "tabTitleReduced": "4",
             "title": "Tab item 4 title",
+            "titleReduced": "Reduced title 4",
             "body": "This is display text 4. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+            "bodyReduced": "Reduced body 4",
             "_graphic": {
                 "alt": "alt text",
                 "src": "course/en/images/tabs.jpg"
             },
             "_audio": {
-                "mp3": "course/en/audio/MAC_M1_04_3.mp3",
-                "ogg": "course/en/audio/MAC_M1_04_3.ogg"
+                "mp3": "course/en/audio/***.mp3",
+                "ogg": "course/en/audio/***.ogg"
             }
         }
     ]
