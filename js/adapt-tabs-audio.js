@@ -70,7 +70,7 @@ define(function(require) {
             var currentItem = this.getCurrentItem($item.index());
 
 			///// Audio /////
-            if (this.model.has('_audio') && this.model.get('_audio')._isEnabled) {
+            if (this.model.has('_audio') && this.model.get('_audio')._isEnabled && Adapt.audio.audioClip[this.model.get('_audio')._channel].status==1) {
                 // Determine which filetype to play
                 if (Adapt.audio.audioClip[this.model.get('_audio')._channel].canPlayType('audio/ogg')) this.audioFile = currentItem._audio.ogg;
                 if (Adapt.audio.audioClip[this.model.get('_audio')._channel].canPlayType('audio/mpeg')) this.audioFile = currentItem._audio.mp3;
