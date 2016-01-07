@@ -92,7 +92,6 @@ define(function(require) {
 			$contentItems.removeClass('active').velocity({
 				opacity: 0,
 				translateY: '0px'
-				//translateY: '20px'
 			}, {
 				duration: 0,
 				display: 'none'
@@ -104,7 +103,6 @@ define(function(require) {
 				translateY: '0'
 			}, {
 				duration: 1000,
-				//duration: 300,
 				display: 'block',
 				complete: _.bind(complete,this)
 			});
