@@ -22,8 +22,8 @@
         "_channel": 0,
         "_location": "top-right",
         "_media": {
-            "mp3": "course/en/audio/***.mp3",
-            "ogg": "course/en/audio/***.ogg"
+            "desktop": "course/en/audio/***.mp3",
+            "mobile": "course/en/audio/***.mp3"
         }
     },
     "_items": [
@@ -39,8 +39,7 @@
                 "src": "course/en/images/tabs.jpg"
             },
             "_audio": {
-                "mp3": "course/en/audio/***.mp3",
-                "ogg": "course/en/audio/***.ogg"
+                "src": "course/en/audio/***.mp3"
             }
         },
         {
@@ -55,8 +54,7 @@
                 "src": "course/en/images/tabs.jpg"
             },
             "_audio": {
-                "mp3": "course/en/audio/***.mp3",
-                "ogg": "course/en/audio/***.ogg"
+                "src": "course/en/audio/***.mp3"
             }
         },
         {
@@ -71,8 +69,7 @@
                 "src": "course/en/images/tabs.jpg"
             },
             "_audio": {
-                "mp3": "course/en/audio/***.mp3",
-                "ogg": "course/en/audio/***.ogg"
+                "src": "course/en/audio/***.mp3"
             }
         },
         {
@@ -87,8 +84,7 @@
                 "src": "course/en/images/tabs.jpg"
             },
             "_audio": {
-                "mp3": "course/en/audio/***.mp3",
-                "ogg": "course/en/audio/***.ogg"
+                "src": "course/en/audio/***.mp3"
             }
         }
     ]
