@@ -28,6 +28,22 @@
       "validators": [],
       "help": "This is the instruction text"
     },
+    "displayTitleReduced": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Reduced Text Display Title",
+      "inputType": "Text",
+      "validators": []
+    },
+    "bodyReduced": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Reduced Text Body",
+      "inputType": "TextArea",
+      "validators": []
+    },
     "_tabLayout":{
       "type": "string",
       "required": true,
@@ -55,6 +71,15 @@
             "validators": ["required"],
             "help": "This is the tab item title"
           },
+          "tabTitleReduced": {
+            "type": "string",
+            "required": true,
+            "inputType": "Text",
+            "title": "Tab Item Title - Reduced Text",
+            "default": "",
+            "validators": ["required"],
+            "help": "This is the tab item title when reduced text is shown"
+          },
           "title": {
             "type": "string",
             "required": true,
@@ -64,6 +89,15 @@
             "validators": ["required"],
             "help": "This is the item title"
           },
+          "titleReduced": {
+            "type": "string",
+            "required": true,
+            "inputType": "Text",
+            "title": "Item Title - Reduced Text",
+            "default": "",
+            "validators": ["required"],
+            "help": "This is the item title when reduced text is shown"
+          },
           "body": {
             "type": "string",
             "required": false,
@@ -72,6 +106,15 @@
             "default": "",
             "validators": [],
             "help": "This is the item body text that is hidden until the tab item title is clicked on"
+          },
+          "bodyReduced": {
+            "type": "string",
+            "required": false,
+            "inputType": "TextArea",
+            "title": "Item Body - Reduced Text",
+            "default": "",
+            "validators": [],
+            "help": "This is the item body text that is hidden until the tab item title is clicked on. Reduced text version."
           },
           "_graphic": {
             "type": "object",
@@ -95,7 +138,38 @@
                 "help": "Optional image which will be rendered with the item body text"
               }
             }
+          },
+          "_audio": {
+            "type": "object",
+            "required": false,
+            "properties": {
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Audio",
+                "inputType": "Asset:audio",
+                "validators": [],
+                "help": "Optional audio for this item"
+              }
+            }
           }
+        }
+      }
+    },
+    "_reducedText": {
+      "type":"object",
+      "required":false,
+      "title": "Reduced Text Options",
+      "help": "The Audio extension must be installed for reduced text options to work",
+      "properties":{
+        "_isEnabled": {
+          "type":"boolean",
+          "required":false,
+          "default": true,
+          "title": "Reduced Text Enabled",
+          "inputType": { "type": "Boolean", "options": [false, true]},
+          "validators": []
         }
       }
     }
