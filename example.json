@@ -10,11 +10,6 @@
     "body": "Body text.",
     "instruction": "Select the tabs to find out more.",
     "_tabLayout": "top",
-    "displayTitleReduced": "Reduced title",
-    "bodyReduced": "Reduced text",
-    "_reducedText": {
-        "_isEnabled": true
-    },
     "_items": [
         {
             "tabTitle": "Tab Title 1",
