@@ -1,11 +1,15 @@
 {
   "name": "adapt-tabs-audio",
   "version": "2.0.1",
-  "framework": "2.0.4",
+  "framework": "^2.0.4",
   "displayName" : "Tabs audio",
   "component" : "tabs-audio",
   "description": "Organise content into tab views",
   "main": "/js/adapt-tabs-audio.js",
+  "assetFields" : [
+    "_items[]._graphic.src",
+    "_items[]._audio.src"
+  ],
   "keywords": [
     "adapt-plugin",
     "adapt-component"

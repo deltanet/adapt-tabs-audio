@@ -8,7 +8,7 @@ define(function(require) {
 		events: {
 			'click .tabsAudio-navigation-item': 'onTabItemClicked'
 		},
-		
+
 		preRender: function() {
 			// Listen for text change on audio extension
             this.listenTo(Adapt, "audio:changeText", this.replaceText);
@@ -21,7 +21,7 @@ define(function(require) {
 			this.showContentItemAtIndex(0, true);
 			this.setTabSelectedAtIndex(0);
 
-			if (this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled && Adapt.config.get('_reducedText')._isEnabled) {
+			if (this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
 				this.replaceText(Adapt.audio.textSize);
             }
 		},
@@ -36,7 +36,7 @@ define(function(require) {
 					this.setTabLayoutTop();
 				} else if (tabLayout === 'left') {
 					this.setTabLayoutLeft();
-				}                
+				}
 			} else {
 				this.$el.addClass("tabAudio-layout-left");
 				this.setTabLayoutLeft();
@@ -93,7 +93,7 @@ define(function(require) {
 				duration: 0,
 				display: 'none'
 			});
-			
+
 			var $contentItem = $contentItems.eq(index);
 			$contentItem.velocity({
 				opacity: 1,
@@ -137,15 +137,7 @@ define(function(require) {
 		// Reduced text
         replaceText: function(value) {
             // If enabled
-            if (this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled && Adapt.config.get('_reducedText')._isEnabled) {
-                // Change component title and body
-                if(value == 0) {
-                    this.$('.component-title-inner').html(this.model.get('displayTitle')).a11y_text();
-                    this.$('.component-body-inner').html(this.model.get('body')).a11y_text();
-                } else {
-                    this.$('.component-title-inner').html(this.model.get('displayTitleReduced')).a11y_text();
-                    this.$('.component-body-inner').html(this.model.get('bodyReduced')).a11y_text();
-                }
+            if (this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
                 // Change each items title and body
                 for (var i = 0; i < this.model.get('_items').length; i++) {
                     if(value == 0) {
@@ -160,11 +152,11 @@ define(function(require) {
                 }
             }
         }
-		
+
 	});
-	
+
 	Adapt.register("tabs-audio", TabsAudio);
 
 	return TabsAudio;
-	
+
 });
