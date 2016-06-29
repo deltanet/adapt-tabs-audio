@@ -18,7 +18,7 @@ The attributes listed below are used in *components.json* to configure **Tabs**,
 
 **_parentId** (string): An identifier that links the component to the parent block.
 
-**_type** (string): The type of the particular item. Examples include block and component.	
+**_type** (string): The type of the particular item. Examples include block and component.
 
 **_component** (string): This value must be: `tabs`.
 
@@ -26,18 +26,18 @@ The attributes listed below are used in *components.json* to configure **Tabs**,
 
 **_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.
 
-**title** (string): The title of the particular item.	
+**title** (string): The title of the particular item.
 
-**displayTitle** (string): This is the title that Adapt displays when viewing a course.	
+**displayTitle** (string): This is the title that Adapt displays when viewing a course.
 
-**body** (string): The body text content of the particular item.	
+**body** (string): The body text content of the particular item.
 
 **instruction** (string): This optional text appears above the component. It is frequently used to
 guide the learner’s interaction with the component.  
 
 **_tabLayout** (string): Defines the layout of the tabs. Acceptable values are `left` and `top`. By default, component displays `left` layout for medium screen size and below.
 
-**_items** (array): Multiple items may be created. Each _item_ represents one element of the tabs component and contains values for **tabTitle**, **title**, **body**, and **_graphic**. 
+**_items** (array): Multiple items may be created. Each _item_ represents one element of the tabs component and contains values for **tabTitle**, **title**, **body**, and **_graphic**.
 
 >**tabTitle** (string): This text is displayed in the actual tab heading. Recommendation to keep this title short.
 
@@ -49,7 +49,7 @@ guide the learner’s interaction with the component.
 
 >>**src** (string): File name (including path) of the image. Path should be relative to the *src* folder (e.g., *course/en/images/tabs.jpg*).
 
->>**alt** (string): This text becomes the image’s `alt` attribute. 
+>>**alt** (string): This text becomes the image’s `alt` attribute.
 
 
 ### Accessibility
@@ -58,11 +58,11 @@ guide the learner’s interaction with the component.
 
 ## Limitations
 
-**tabTitle** headings will be replaced by **...** if the heading is too long for the container. 
+**tabTitle** headings will be replaced by **...** if the heading is too long for the container.
 
 
 ----------------------------
-**Version number:**  2.0.0
+**Version number:**  2.0.2
 **Framework versions:** 2.0.4
 **Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   
