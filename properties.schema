@@ -9,7 +9,8 @@
       "required": true,
       "default": "This component is comprised of hidden content panels that can contain text and images. Select the tab item titles to reveal the content panels.",
       "inputType": "Text",
-      "validators": []
+      "validators": [],
+      "translatable": true
     }
   },
   "properties":{
@@ -26,7 +27,8 @@
       "default": "",
       "inputType": "Text",
       "validators": [],
-      "help": "This is the instruction text"
+      "help": "This is the instruction text",
+      "translatable": true
     },
     "_tabLayout":{
       "type": "string",
@@ -53,7 +55,8 @@
             "title": "Tab Item Title",
             "default": "",
             "validators": ["required"],
-            "help": "This is the tab item title"
+            "help": "This is the tab item title",
+            "translatable": true
           },
           "tabTitleReduced": {
             "type": "string",
@@ -62,7 +65,8 @@
             "title": "Tab Item Title - Reduced Text",
             "default": "",
             "validators": ["required"],
-            "help": "This is the tab item title when reduced text is shown"
+            "help": "This is the tab item title when reduced text is shown",
+            "translatable": true
           },
           "title": {
             "type": "string",
@@ -71,7 +75,8 @@
             "title": "Item Title",
             "default": "",
             "validators": ["required"],
-            "help": "This is the item title"
+            "help": "This is the item title",
+            "translatable": true
           },
           "titleReduced": {
             "type": "string",
@@ -80,7 +85,8 @@
             "title": "Item Title - Reduced Text",
             "default": "",
             "validators": ["required"],
-            "help": "This is the item title when reduced text is shown"
+            "help": "This is the item title when reduced text is shown",
+            "translatable": true
           },
           "body": {
             "type": "string",
@@ -89,7 +95,8 @@
             "title": "Item Body",
             "default": "",
             "validators": [],
-            "help": "This is the item body text that is hidden until the tab item title is clicked on"
+            "help": "This is the item body text that is hidden until the tab item title is clicked on",
+            "translatable": true
           },
           "bodyReduced": {
             "type": "string",
@@ -98,7 +105,8 @@
             "title": "Item Body - Reduced Text",
             "default": "",
             "validators": [],
-            "help": "This is the item body text that is hidden until the tab item title is clicked on. Reduced text version."
+            "help": "This is the item body text that is hidden until the tab item title is clicked on. Reduced text version.",
+            "translatable": true
           },
           "_graphic": {
             "type": "object",
@@ -111,7 +119,8 @@
                 "default": "",
                 "inputType": "Text",
                 "validators": [],
-                "help": "The alternative text for this image"
+                "help": "The alternative text for this image",
+                "translatable": true
               },
               "src": {
                 "type": "string",
