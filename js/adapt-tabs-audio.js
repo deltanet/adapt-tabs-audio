@@ -67,21 +67,23 @@ define(function(require) {
 			this.setVisited($(event.currentTarget).index());
 
 			var $item = $(event.currentTarget).parent();
-            var currentItem = this.getCurrentItem($item.index());
+      var currentItem = this.getCurrentItem($item.index());
 
 			///// Audio /////
-            if (this.model.has('_audio') && this.model.get('_audio')._isEnabled && Adapt.audio.audioClip[this.model.get('_audio')._channel].status==1) {
-                // Trigger audio
-                Adapt.trigger('audio:playAudio', currentItem._audio.src, this.model.get('_id'), this.model.get('_audio')._channel);
-            }
-            ///// End of Audio /////
+      if (this.model.has('_audio') && this.model.get('_audio')._isEnabled && Adapt.audio.audioClip[this.model.get('_audio')._channel].status==1) {
+				// Reset onscreen id
+				Adapt.audio.audioClip[this.model.get('_audio')._channel].onscreenID = "";
+        // Trigger audio
+        Adapt.trigger('audio:playAudio', currentItem._audio.src, this.model.get('_id'), this.model.get('_audio')._channel);
+      }
+      ///// End of Audio /////
 		},
 
 		///// Audio /////
 		getCurrentItem: function(index) {
-            return this.model.get('_items')[index];
-        },
-        ///// End of Audio /////
+      return this.model.get('_items')[index];
+    },
+    ///// End of Audio /////
 
 		showContentItemAtIndex: function(index, skipFocus) {
 			var $contentItems = this.$('.tabAudio-content');
