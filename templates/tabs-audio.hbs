@@ -6,9 +6,9 @@
 				{{#each _items}}
 				<div class="tabAudio-content item-{{@index}}">
 					<div class="tabAudio-content-inner">
-						{{#if _graphic}}
+						{{#if _graphic.src}}
 						<div class="tabAudio-content-item-graphic">
-							<img class="tabAudio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt={{{_graphic.alt}}} tabindex="0"/>
+							<img class="tabAudio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}" tabindex="0"/>
 						</div>
 						{{/if}}
 						<div class="tabAudio-content-text">
