@@ -1,6 +1,6 @@
 {
   "name": "adapt-tabs-audio",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "framework": "^2.0.4",
   "displayName" : "Tabs audio",
   "component" : "tabs-audio",
