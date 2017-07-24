@@ -1,6 +1,8 @@
-# adapt-tabs-audio
+# adapt-tabs-audio  
 
-The component displays a vertically or horizontally stacked list of heading tabs. Each heading is associated with a hidden content panel. Clicking a heading toggles the visibility of its content panel. The first content panel is visible by default. Content panels may contain text and/or an image.
+**Tabs** is a *presentation component* for the [Adapt framework](https://github.com/adaptlearning/adapt_framework). 
+
+Each heading tab is associated with a hidden content panel. Clicking a heading toggles the visibility of its content panel. The first content panel is visible by default. Content panels may contain text and/or an image.
 
 ## Installation
 
