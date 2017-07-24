@@ -2,11 +2,11 @@
 
 The component displays a vertically or horizontally stacked list of heading tabs. Each heading is associated with a hidden content panel. Clicking a heading toggles the visibility of its content panel. The first content panel is visible by default. Content panels may contain text and/or an image.
 
-##Installation
+## Installation
 
-Open the */src/components* folder in a new terminal window on Mac OSX or right click the folder and select 'Git Bash Here' on Windows.
+This component must be manually installed.  
 
-Git clone the component, making sure to delete the hidden **.git** folder from the *adapt-tabs* folder.
+If **Tabs** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).  
 
 ## Settings Overview
 
