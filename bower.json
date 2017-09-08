@@ -1,19 +1,15 @@
 {
   "name": "adapt-tabs-audio",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "framework": "^2.0.4",
+  "homepage": "https://github.com/deltanet/adapt-tabs-audio",
   "displayName" : "Tabs audio",
   "component" : "tabs-audio",
   "description": "Organise content into tab views",
   "main": "/js/adapt-tabs-audio.js",
-  "assetFields" : [
-    "_items[]._graphic.src",
-    "_items[]._audio.src"
-  ],
   "keywords": [
     "adapt-plugin",
     "adapt-component"
   ],
-  "license": "GPL-3.0",
-  "homepage": "https://github.com/deltanet/adapt-tabs-audio"
+  "license": "GPLv3"
 }

@@ -1,6 +1,6 @@
 # adapt-tabs-audio  
 
-**Tabs** is a *presentation component* for the [Adapt framework](https://github.com/adaptlearning/adapt_framework). 
+**Tabs** is a *presentation component* for the [Adapt framework](https://github.com/adaptlearning/adapt_framework).
 
 Each heading tab is associated with a hidden content panel. Clicking a heading toggles the visibility of its content panel. The first content panel is visible by default. Content panels may contain text and/or an image.
 
@@ -51,21 +51,18 @@ guide the learner’s interaction with the component.
 
 >>**src** (string): File name (including path) of the image. Path should be relative to the *src* folder (e.g., *course/en/images/tabs.jpg*).
 
->>**alt** (string): This text becomes the image’s `alt` attribute.
-
+>>**alt** (string): This text becomes the image’s `alt` attribute.  
 
 ### Accessibility
 **Tabs** has been assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**. This label is not a visible element. It is utilized by assistive technology such as screen readers. Should the region's text need to be customised, it can be found within the **globals** object in course.json.
-
 
 ## Limitations
 
 **tabTitle** headings will be replaced by **...** if the heading is too long for the container.
 
-
 ----------------------------
-**Version number:**  2.0.5
-**Framework versions:** 2.0.4
+**Version number:**  2.0.6  
+**Framework versions:** 2.0.4  
 **Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   
 **RTL support:** Yes  
