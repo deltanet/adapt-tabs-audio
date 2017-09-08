@@ -6,11 +6,7 @@
 				{{#each _items}}
 				<div class="tabAudio-content item-{{@index}}">
 					<div class="tabAudio-content-inner">
-						{{#if _graphic.src}}
-						<div class="tabAudio-content-item-graphic">
-							<img class="tabAudio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}" tabindex="0"/>
-						</div>
-						{{/if}}
+
 						<div class="tabAudio-content-text">
 							<div class="tabAudio-content-item-title">
 								<div class="tabAudio-content-item-title-inner accessible-text-block" role="heading" aria-level="5" tabindex="0">
@@ -23,6 +19,13 @@
 								</div>
 							</div>
 						</div>
+
+						{{#if _graphic.src}}
+						<div class="tabAudio-content-item-graphic">
+							<img class="tabAudio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}" tabindex="0"/>
+						</div>
+						{{/if}}
+
 					</div>
 				</div>
 				{{/each}}
@@ -31,11 +34,11 @@
 		<div class="tabsAudio-navigation">
 			<div class="tabsAudio-navigation-inner">
 				{{#each _items}}
-				<a href="#" class="tabsAudio-navigation-item" role="button" aria-label="{{{tabTitle}}} {{#if _isVisited}}. Visited{{/if}}" data-id="item-{{@index}}">
+				<button class="base tabsAudio-navigation-item" role="button" tabindex="0" aria-label="{{{tabTitle}}} {{#if _isVisited}}. Visited{{/if}}" data-id="item-{{@index}}">
 					<div class="tabsAudio-navigation-item-inner">
 						{{{tabTitle}}}
 					</div>
-				</a>
+				</button>
 				{{/each}}
 			</div>
 		</div>

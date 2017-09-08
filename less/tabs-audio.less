@@ -114,12 +114,22 @@
 		}
 	}
 
+	.tabAudio-content {
+		&.fullwidth {
+			.tabAudio-content-text,
+			.tabAudio-content-item-graphic {
+				width: 100%;
+			}
+		}
+	}
+
 	.tabsAudio-content-items-inner {
 		padding: @item-padding;
 	}
 
 	.tabAudio-content-text {
-		width: auto;
+		float: left;
+		width: 50%;
 		margin-bottom: @item-padding;
 	}
 
@@ -127,14 +137,9 @@
 		margin-bottom: @item-padding;
 	}
 
-	.tabAudio-content-item-body {
-	}
-
 	.tabAudio-content-item-graphic {
 	    width: 48%;
-	    float: right;
-	    padding-bottom: @item-padding;
-	    padding-left: @item-padding;
+			float: right;
 	}
 	.tabAudio-content-item-graphic-inner {
 	    float: right;
@@ -194,47 +199,46 @@
 	}
 
 	@media all and (max-width: @device-width-medium) {
+		.tabAudio-content-text {
+			width: 100%;
+		}
 		.tabAudio-content-item-body {
 			width: 100%;
-		    padding-right: 0px;
+		  padding-right: 0px;
 		}
-
 		.tabAudio-content-item-graphic {
-		    width: 100%;
+		  width: 100%;
 		}
 		.tabsAudio-navigation {
 			width: 25%;
 		}
-
 		.tabsAudio-navigation-item-inner {
 			&:after {
 				display: none;
 			}
 		}
-
 		.tabsAudio-content-items {
 			width: 75%;
 		}
-
 	}
 
 	@media all and (max-width: @device-width-small) {
+		.tabAudio-content-text {
+			width: 100%;
+		}
 		.tabAudio-content-item-body {
 			width: 100%;
-		    padding-right: 0px;
+		  padding-right: 0px;
 		}
-
 		.tabAudio-content-item-graphic {
-		    width: 100%;
+		  width: 100%;
 		}
 		.tabsAudio-navigation {
 			width: 30%;
 		}
-
 		.tabsAudio-content-items {
 			width: 70%;
 		}
-
 		.tabsAudio-content-items-inner {
 			padding: @item-padding;
 		}

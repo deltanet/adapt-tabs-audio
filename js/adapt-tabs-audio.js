@@ -11,7 +11,7 @@ define(function(require) {
 
 		preRender: function() {
 			// Listen for text change on audio extension
-            this.listenTo(Adapt, "audio:changeText", this.replaceText);
+      this.listenTo(Adapt, "audio:changeText", this.replaceText);
 		},
 
 		postRender: function() {
@@ -23,7 +23,7 @@ define(function(require) {
 
 			if (this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
 				this.replaceText(Adapt.audio.textSize);
-            }
+      }
 		},
 
 		setLayout: function() {
@@ -40,6 +40,13 @@ define(function(require) {
 			} else {
 				this.$el.addClass("tabAudio-layout-left");
 				this.setTabLayoutLeft();
+			}
+
+			// Check if just an image or just text is used in an item
+			for (var i = 0; i < this.model.get('_items').length; i++) {
+				if (this.model.get('_items')[i]._graphic.src == "" || this.model.get('_items')[i].body == "") {
+					this.$('.item-'+i).addClass("fullwidth");
+				}
 			}
 
 		},
@@ -108,7 +115,7 @@ define(function(require) {
 
 			function complete() {
 				if (skipFocus) return;
-	            $contentItem.addClass('active').a11y_focus();
+	      $contentItem.addClass('active').a11y_focus();
 			}
 		},
 
@@ -137,23 +144,23 @@ define(function(require) {
 		},
 
 		// Reduced text
-        replaceText: function(value) {
-            // If enabled
-            if (this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
-                // Change each items title and body
-                for (var i = 0; i < this.model.get('_items').length; i++) {
-                    if(value == 0) {
-                    	this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitle);
-                        this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].title);
-                        this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].body);
-                    } else {
-                    	this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitleReduced);
-                        this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced);
-                        this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced);
-                    }
-                }
-            }
+    replaceText: function(value) {
+      // If enabled
+      if (this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
+        // Change each items title and body
+        for (var i = 0; i < this.model.get('_items').length; i++) {
+          if(value == 0) {
+            this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitle);
+            this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].title).a11y_text();
+            this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].body).a11y_text();
+          } else {
+            this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitleReduced);
+            this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced).a11y_text();
+            this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced).a11y_text();
+          }
         }
+      }
+    }
 
 	});
 
