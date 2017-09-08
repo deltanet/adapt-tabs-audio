@@ -129,6 +129,9 @@
 
 	.tabAudio-content-text {
 		float: left;
+		.dir-rtl & {
+			float: right;
+		}
 		width: 50%;
 		margin-bottom: @item-padding;
 	}
@@ -140,9 +143,15 @@
 	.tabAudio-content-item-graphic {
 	    width: 48%;
 			float: right;
+			.dir-rtl & {
+				float: left;
+			}
 	}
 	.tabAudio-content-item-graphic-inner {
 	    float: right;
+			.dir-rtl & {
+				float: left;
+			}
 	}
 
 	// Top Layout
