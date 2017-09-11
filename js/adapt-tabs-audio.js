@@ -73,8 +73,7 @@ define(function(require) {
 			this.setTabSelectedAtIndex(index);
 			this.setVisited($(event.currentTarget).index());
 
-			var $item = $(event.currentTarget).parent();
-      var currentItem = this.getCurrentItem($item.index());
+			var currentItem = this.getCurrentItem(index);
 
 			///// Audio /////
       if (this.model.has('_audio') && this.model.get('_audio')._isEnabled && Adapt.audio.audioClip[this.model.get('_audio')._channel].status==1) {
