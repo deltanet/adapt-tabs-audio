@@ -61,8 +61,8 @@ guide the learner’s interaction with the component.
 **tabTitle** headings will be replaced by **...** if the heading is too long for the container.
 
 ----------------------------
-**Version number:**  2.0.6  
-**Framework versions:** 2.0.4  
+**Version number:**  2.0.7  
+**Framework versions:** 2+  
 **Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   
 **RTL support:** Yes  

@@ -52,7 +52,7 @@
             "type": "string",
             "required": true,
             "inputType": "Text",
-            "title": "Tab Item Title",
+            "title": "Tab Title",
             "default": "",
             "validators": ["required"],
             "help": "This is the tab item title",
@@ -60,32 +60,32 @@
           },
           "tabTitleReduced": {
             "type": "string",
-            "required": true,
+            "required": false,
             "inputType": "Text",
-            "title": "Tab Item Title - Reduced Text",
+            "title": "Tab Reduced Title",
             "default": "",
-            "validators": ["required"],
-            "help": "This is the tab item title when reduced text is shown",
+            "validators": [],
+            "help": "This is the tab item title when reduced text is enabled",
             "translatable": true
           },
           "title": {
             "type": "string",
-            "required": true,
+            "required": false,
             "inputType": "Text",
             "title": "Item Title",
             "default": "",
-            "validators": ["required"],
+            "validators": [],
             "help": "This is the item title",
             "translatable": true
           },
           "titleReduced": {
             "type": "string",
-            "required": true,
+            "required": false,
             "inputType": "Text",
-            "title": "Item Title - Reduced Text",
+            "title": "Item Reduced Title",
             "default": "",
-            "validators": ["required"],
-            "help": "This is the item title when reduced text is shown",
+            "validators": [],
+            "help": "This is the item title when reduced text is enabled",
             "translatable": true
           },
           "body": {
@@ -95,17 +95,17 @@
             "title": "Item Body",
             "default": "",
             "validators": [],
-            "help": "This is the item body text that is hidden until the tab item title is clicked on",
+            "help": "This is the item body text that is hidden until the tab item title is selected",
             "translatable": true
           },
           "bodyReduced": {
             "type": "string",
             "required": false,
             "inputType": "TextArea",
-            "title": "Item Body - Reduced Text",
+            "title": "Item Reduced Body",
             "default": "",
             "validators": [],
-            "help": "This is the item body text that is hidden until the tab item title is clicked on. Reduced text version.",
+            "help": "This is the item's reduced body text that is hidden until the tab item title is selected",
             "translatable": true
           },
           "_graphic": {
@@ -127,8 +127,7 @@
                 "required": false,
                 "default": "",
                 "inputType": "Asset:image",
-                "validators": [],
-                "help": "Optional image which will be rendered with the item body text"
+                "validators": []
               }
             }
           },
@@ -142,8 +141,7 @@
                 "default": "",
                 "title": "Audio",
                 "inputType": "Asset:audio",
-                "validators": [],
-                "help": "Optional audio for this item"
+                "validators": []
               }
             }
           }
