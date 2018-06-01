@@ -34,8 +34,7 @@ The attributes listed below are used in *components.json* to configure **Tabs**,
 
 **body** (string): The body text content of the particular item.
 
-**instruction** (string): This optional text appears above the component. It is frequently used to
-guide the learner’s interaction with the component.  
+**instruction** (string): This optional text appears above the component. It is frequently used to guide the learner’s interaction with the component.  
 
 **_tabLayout** (string): Defines the layout of the tabs. Acceptable values are `left` and `top`. By default, component displays `left` layout for medium screen size and below.
 
@@ -46,6 +45,8 @@ guide the learner’s interaction with the component.
 >**title** (string): This text is displayed as the content panel's header. It is displayed when the tab has been selected.
 
 >**body** (string): This content will be displayed when the learner opens this content panel. It may contain HTML.  
+
+>**instruction** (string): This optional text appears below the item body text as instructional text.    
 
 >**_graphic** (object): An optional image which is displayed below the item body when the learner opens this content panel. It contains values for **src** and **alt**.
 
@@ -61,7 +62,7 @@ guide the learner’s interaction with the component.
 **tabTitle** headings will be replaced by **...** if the heading is too long for the container.
 
 ----------------------------
-**Version number:**  2.0.7  
+**Version number:**  2.1.0  
 **Framework versions:** 2+  
 **Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   

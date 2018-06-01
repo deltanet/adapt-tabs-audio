@@ -108,6 +108,15 @@
             "help": "This is the item's reduced body text that is hidden until the tab item title is selected",
             "translatable": true
           },
+          "instruction": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "inputType": "Text",
+            "validators": [],
+            "help": "This is the item's instruction text",
+            "translatable": true
+          },
           "_graphic": {
             "type": "object",
             "required": false,

@@ -18,6 +18,7 @@
             "titleReduced": "Reduced title 1",
             "body": "This is display text 1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
             "bodyReduced": "Reduced body 1",
+            "instruction": "",
             "_graphic": {
                 "alt": "alt text",
                 "src": "course/en/images/tabs.jpg"
@@ -33,6 +34,7 @@
             "titleReduced": "Reduced title 2",
             "body": "This is display text 2. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
             "bodyReduced": "Reduced body 2",
+            "instruction": "",
             "_graphic": {
                 "alt": "alt text",
                 "src": "course/en/images/tabs.jpg"
@@ -48,6 +50,7 @@
             "titleReduced": "Reduced title 3",
             "body": "This is display text 3. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
             "bodyReduced": "Reduced body 3",
+            "instruction": "",
             "_graphic": {
                 "alt": "alt text",
                 "src": "course/en/images/tabs.jpg"
@@ -63,6 +66,7 @@
             "titleReduced": "Reduced title 4",
             "body": "This is display text 4. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
             "bodyReduced": "Reduced body 4",
+            "instruction": "",
             "_graphic": {
                 "alt": "alt text",
                 "src": "course/en/images/tabs.jpg"
