@@ -6,33 +6,30 @@
 				{{#each _items}}
 				<div class="tabAudio-content item-{{@index}}">
 					<div class="tabAudio-content-inner">
-
 						<div class="tabAudio-content-text">
 							<div class="tabAudio-content-item-title">
 								<div class="tabAudio-content-item-title-inner accessible-text-block" role="heading" aria-level="5" tabindex="0">
-									{{{title}}}
+									{{{compile title}}}
 								</div>
 							</div>
 							<div class="tabAudio-content-item-body">
 								<div class="tabAudio-content-item-body-inner">
-									{{{a11y_text body}}}
+									{{{compile_a11y_text body}}}
 								</div>
 							</div>
 							{{#if instruction}}
 							<div class="tabAudio-content-instruction">
 									<div class="tabAudio-content-instruction-inner">
-											{{{a11y_text instruction}}}
+											{{{compile_a11y_text instruction}}}
 									</div>
 							</div>
 							{{/if}}
 						</div>
-
 						{{#if _graphic.src}}
 						<div class="tabAudio-content-item-graphic">
 							<img class="tabAudio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}" tabindex="0"/>
 						</div>
 						{{/if}}
-
 					</div>
 				</div>
 				{{/each}}
@@ -43,7 +40,7 @@
 				{{#each _items}}
 				<button class="base tabsAudio-navigation-item" role="button" tabindex="0" aria-label="{{{tabTitle}}} {{#if _isVisited}}. Visited{{/if}}" data-id="item-{{@index}}">
 					<div class="tabsAudio-navigation-item-inner">
-						{{{tabTitle}}}
+						{{{compile tabTitle}}}
 					</div>
 				</button>
 				{{/each}}

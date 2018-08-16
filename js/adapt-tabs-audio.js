@@ -21,7 +21,7 @@ define(function(require) {
 			this.showContentItemAtIndex(0, true);
 			this.setTabSelectedAtIndex(0);
 
-			if (Adapt.audio && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
+			if (this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
 				this.replaceText(Adapt.audio.textSize);
       }
 		},
