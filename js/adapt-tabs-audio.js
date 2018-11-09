@@ -93,29 +93,13 @@ define(function(require) {
 
 		showContentItemAtIndex: function(index, skipFocus) {
 			var $contentItems = this.$('.tabAudio-content');
-
-			$contentItems.removeClass('active').velocity({
-				opacity: 0,
-				translateY: '0px'
-			}, {
-				duration: 0,
-				display: 'none'
-			});
+			$contentItems.removeClass('active');
 
 			var $contentItem = $contentItems.eq(index);
-			$contentItem.velocity({
-				opacity: 1,
-				translateY: '0'
-			}, {
-				duration: 1000,
-				display: 'block',
-				complete: _.bind(complete,this)
-			});
+			$contentItem.addClass('active');
 
-			function complete() {
-				if (skipFocus) return;
-	      $contentItem.addClass('active').a11y_focus();
-			}
+			if (skipFocus) return;
+			$contentItem.a11y_focus();
 		},
 
 		setTabSelectedAtIndex: function(index) {
