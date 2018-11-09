@@ -7,16 +7,20 @@
 				<div class="tabAudio-content item-{{@index}}">
 					<div class="tabAudio-content-inner">
 						<div class="tabAudio-content-text">
+							{{#if title}}
 							<div class="tabAudio-content-item-title">
 								<div class="tabAudio-content-item-title-inner accessible-text-block" role="heading" aria-level="5" tabindex="0">
 									{{{compile title}}}
 								</div>
 							</div>
+							{{/if}}
+							{{#if body}}
 							<div class="tabAudio-content-item-body">
 								<div class="tabAudio-content-item-body-inner">
 									{{{compile_a11y_text body}}}
 								</div>
 							</div>
+							{{/if}}
 							{{#if instruction}}
 							<div class="tabAudio-content-instruction">
 									<div class="tabAudio-content-instruction-inner">
