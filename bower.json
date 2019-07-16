@@ -1,7 +1,7 @@
 {
   "name": "adapt-tabs-audio",
   "version": "2.1.3",
-  "framework": ">=2",
+  "framework": ">=4",
   "homepage": "https://github.com/deltanet/adapt-tabs-audio",
   "displayName" : "Tabs audio",
   "component" : "tabs-audio",

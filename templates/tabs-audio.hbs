@@ -1,4 +1,4 @@
-<div class="tabsAudio-inner component-inner" role="region" aria-label="{{_globals._components._tabs.ariaRegion}}" {{#if _globals._components._tabs.ariaRegion}}tabindex="0"{{/if}}>
+<div class="tabsAudio-inner component-inner" role="region" aria-label="{{_globals._components._tabs.ariaRegion}}">
 	{{> component this}}
 	<div class="tabsAudio-widget component-widget clearfix">
 		<div class="tabsAudio-content-items">
@@ -9,7 +9,7 @@
 						<div class="tabAudio-content-text">
 							{{#if title}}
 							<div class="tabAudio-content-item-title">
-								<div class="tabAudio-content-item-title-inner accessible-text-block" role="heading" aria-level="5" tabindex="0">
+								<div class="tabAudio-content-item-title-inner accessible-text-block" role="heading" aria-level="5">
 									{{{compile title}}}
 								</div>
 							</div>
@@ -17,21 +17,21 @@
 							{{#if body}}
 							<div class="tabAudio-content-item-body">
 								<div class="tabAudio-content-item-body-inner">
-									{{{compile_a11y_text body}}}
+									{{{compile body}}}
 								</div>
 							</div>
 							{{/if}}
 							{{#if instruction}}
 							<div class="tabAudio-content-instruction">
 									<div class="tabAudio-content-instruction-inner">
-											{{{compile_a11y_text instruction}}}
+											{{{compile instruction}}}
 									</div>
 							</div>
 							{{/if}}
 						</div>
 						{{#if _graphic.src}}
 						<div class="tabAudio-content-item-graphic">
-							<img class="tabAudio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}" tabindex="0"/>
+							<img class="tabAudio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}"/>
 						</div>
 						{{/if}}
 					</div>
@@ -42,7 +42,7 @@
 		<div class="tabsAudio-navigation">
 			<div class="tabsAudio-navigation-inner">
 				{{#each _items}}
-				<button class="base tabsAudio-navigation-item" role="button" tabindex="0" aria-label="{{{tabTitle}}} {{#if _isVisited}}. Visited{{/if}}" data-id="item-{{@index}}">
+				<button class="base tabsAudio-navigation-item" aria-label="{{{tabTitle}}} {{#if _isVisited}}. Visited{{/if}}" data-id="item-{{@index}}">
 					<div class="tabsAudio-navigation-item-inner">
 						{{{compile tabTitle}}}
 					</div>
