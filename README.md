@@ -63,7 +63,7 @@ The attributes listed below are used in *components.json* to configure **Tabs**,
 
 ----------------------------
 **Version number:**  2.1.3  
-**Framework versions:** 2+  
+**Framework versions:** 4+  
 **Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   
 **RTL support:** Yes  
