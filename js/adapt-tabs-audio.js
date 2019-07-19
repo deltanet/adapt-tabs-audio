@@ -134,12 +134,12 @@ define(function(require) {
         for (var i = 0; i < this.model.get('_items').length; i++) {
           if(value == 0) {
             this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitle);
-            this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].title).a11y_text();
-            this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].body).a11y_text();
+            this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].title);
+            this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].body);
           } else {
             this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitleReduced);
-            this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced).a11y_text();
-            this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced).a11y_text();
+            this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced);
+            this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced);
           }
         }
       }
