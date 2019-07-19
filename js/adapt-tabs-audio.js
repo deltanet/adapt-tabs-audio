@@ -1,6 +1,6 @@
 define(function(require) {
 
-	var ComponentView = require('coreViews/componentView');
+	var ComponentView = require('core/js/views/componentView');
 	var Adapt = require('core/js/adapt');
 
 	var TabsAudio = ComponentView.extend({
