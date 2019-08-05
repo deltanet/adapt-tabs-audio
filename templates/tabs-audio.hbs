@@ -9,7 +9,7 @@
 						<div class="tabs-audio-content-text">
 							{{#if title}}
 							<div class="tabs-audio-content-item-title">
-								<div class="tabs-audio-content-item-title-inner accessible-text-block" role="heading" aria-level="5">
+								<div class="tabs-audio-content-item-title-inner" role="heading" aria-level="5">
 									{{{compile title}}}
 								</div>
 							</div>
@@ -42,7 +42,8 @@
 		<div class="tabs-audio-navigation">
 			<div class="tabs-audio-navigation-inner">
 				{{#each _items}}
-				<button class="base tabs-audio-navigation-item" aria-label="{{{tabTitle}}} {{#if _isVisited}}. Visited{{/if}}" data-id="item-{{@index}}">
+				<button class="base tabs-audio-navigation-item" data-id="item-{{@index}}">
+					<span class="aria-label">{{tabTitle}}.{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}</span>
 					<div class="tabs-audio-navigation-item-inner">
 						{{{compile tabTitle}}}
 					</div>
