@@ -1,9 +1,10 @@
 define([
     'core/js/adapt',
-    'core/js/views/componentView'
-], function(Adapt, ComponentView) {
+    'core/js/views/componentView',
+    'core/js/models/componentModel'
+], function(Adapt, ComponentView, ComponentModel) {
 
-	var TabsAudio = ComponentView.extend({
+	var TabsAudioView = ComponentView.extend({
 
 		events: {
 			'click .tabs-audio-navigation-item': 'onTabItemClicked'
@@ -147,8 +148,8 @@ define([
 
 	});
 
-	Adapt.register("tabs-audio", TabsAudio);
-
-	return TabsAudio;
-
+  return Adapt.register('tabs-audio', {
+      model: ComponentModel.extend({}),// create a new class in the inheritance chain so it can be extended per component type if necessary later
+      view: TabsAudioView
+  });
 });
