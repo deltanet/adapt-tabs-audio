@@ -62,8 +62,8 @@ The attributes listed below are used in *components.json* to configure **Tabs**,
 **tabTitle** headings will be replaced by **...** if the heading is too long for the container.
 
 ----------------------------
-**Version number:**  2.1.3  
-**Framework versions:** 2+  
+**Version number:**  3.0.0  
+**Framework versions:** 4+  
 **Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   
 **RTL support:** Yes  

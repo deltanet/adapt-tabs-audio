@@ -1,12 +1,13 @@
-define(function(require) {
+define([
+    'core/js/adapt',
+    'core/js/views/componentView',
+    'core/js/models/componentModel'
+], function(Adapt, ComponentView, ComponentModel) {
 
-	var ComponentView = require('coreViews/componentView');
-	var Adapt = require('coreJS/adapt');
-
-	var TabsAudio = ComponentView.extend({
+	var TabsAudioView = ComponentView.extend({
 
 		events: {
-			'click .tabsAudio-navigation-item': 'onTabItemClicked'
+			'click .tabs-audio-navigation-item': 'onTabItemClicked'
 		},
 
 		preRender: function() {
@@ -28,17 +29,17 @@ define(function(require) {
 
 		setLayout: function() {
 
-			this.$el.removeClass("tabAudio-layout-left tabAudio-layout-top");
+			this.$el.removeClass("tabs-audio-layout-left tabs-audio-layout-top");
 			if (Adapt.device.screenSize == 'large') {
 				var tabLayout = this.model.get('_tabLayout');
-				this.$el.addClass("tabAudio-layout-" + tabLayout);
+				this.$el.addClass("tabs-audio-layout-" + tabLayout);
 				if (tabLayout === 'top') {
 					this.setTabLayoutTop();
 				} else if (tabLayout === 'left') {
 					this.setTabLayoutLeft();
 				}
 			} else {
-				this.$el.addClass("tabAudio-layout-left");
+				this.$el.addClass("tabs-audio-layout-left");
 				this.setTabLayoutLeft();
 			}
 
@@ -55,13 +56,13 @@ define(function(require) {
 			var itemsLength = this.model.get('_items').length;
 			var itemWidth = 100 / itemsLength;
 
-			this.$('.tabsAudio-navigation-item').css({
+			this.$('.tabs-audio-navigation-item').css({
 				width: itemWidth + '%'
 			});
 		},
 
 		setTabLayoutLeft: function() {
-			this.$('.tabsAudio-navigation-item').css({
+			this.$('.tabs-audio-navigation-item').css({
 				width: 100 + '%'
 			});
 		},
@@ -92,7 +93,7 @@ define(function(require) {
     ///// End of Audio /////
 
 		showContentItemAtIndex: function(index, skipFocus) {
-			var $contentItems = this.$('.tabAudio-content');
+			var $contentItems = this.$('.tabs-audio-content');
 			$contentItems.removeClass('active');
 
 			var $contentItem = $contentItems.eq(index);
@@ -103,7 +104,7 @@ define(function(require) {
 		},
 
 		setTabSelectedAtIndex: function(index) {
-			var $navigationItem = this.$('.tabsAudio-navigation-item-inner');
+			var $navigationItem = this.$('.tabs-audio-navigation-item-inner');
 			$navigationItem.removeClass('selected').eq(index).addClass('selected visited').attr('aria-label', this.model.get("_items")[index].tabTitle + ". Visited");
 			this.setVisited(index);
 		},
@@ -133,13 +134,13 @@ define(function(require) {
         // Change each items title and body
         for (var i = 0; i < this.model.get('_items').length; i++) {
           if(value == 0) {
-            this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitle);
-            this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].title).a11y_text();
-            this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].body).a11y_text();
+            this.$('.tabs-audio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitle);
+            this.$('.tabs-audio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].title);
+            this.$('.tabs-audio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].body);
           } else {
-            this.$('.tabsAudio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitleReduced);
-            this.$('.tabAudio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced).a11y_text();
-            this.$('.tabAudio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced).a11y_text();
+            this.$('.tabs-audio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitleReduced);
+            this.$('.tabs-audio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced);
+            this.$('.tabs-audio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced);
           }
         }
       }
@@ -147,8 +148,8 @@ define(function(require) {
 
 	});
 
-	Adapt.register("tabs-audio", TabsAudio);
-
-	return TabsAudio;
-
+  return Adapt.register('tabs-audio', {
+      model: ComponentModel.extend({}),// create a new class in the inheritance chain so it can be extended per component type if necessary later
+      view: TabsAudioView
+  });
 });

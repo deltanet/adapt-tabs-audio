@@ -1,37 +1,37 @@
-<div class="tabsAudio-inner component-inner" role="region" aria-label="{{_globals._components._tabs.ariaRegion}}" {{#if _globals._components._tabs.ariaRegion}}tabindex="0"{{/if}}>
+<div class="tabs-audio-inner component-inner">
 	{{> component this}}
-	<div class="tabsAudio-widget component-widget clearfix">
-		<div class="tabsAudio-content-items">
-			<div class="tabsAudio-content-items-inner">
+	<div class="tabs-audio-widget component-widget clearfix">
+		<div class="tabs-audio-content-items">
+			<div class="tabs-audio-content-items-inner">
 				{{#each _items}}
-				<div class="tabAudio-content item-{{@index}}">
-					<div class="tabAudio-content-inner">
-						<div class="tabAudio-content-text">
+				<div class="tabs-audio-content item-{{@index}}">
+					<div class="tabs-audio-content-inner">
+						<div class="tabs-audio-content-text">
 							{{#if title}}
-							<div class="tabAudio-content-item-title">
-								<div class="tabAudio-content-item-title-inner accessible-text-block" role="heading" aria-level="5" tabindex="0">
+							<div class="tabs-audio-content-item-title">
+								<div class="tabs-audio-content-item-title-inner" role="heading" aria-level="5">
 									{{{compile title}}}
 								</div>
 							</div>
 							{{/if}}
 							{{#if body}}
-							<div class="tabAudio-content-item-body">
-								<div class="tabAudio-content-item-body-inner">
-									{{{compile_a11y_text body}}}
+							<div class="tabs-audio-content-item-body">
+								<div class="tabs-audio-content-item-body-inner">
+									{{{compile body}}}
 								</div>
 							</div>
 							{{/if}}
 							{{#if instruction}}
-							<div class="tabAudio-content-instruction">
-									<div class="tabAudio-content-instruction-inner">
-											{{{compile_a11y_text instruction}}}
+							<div class="tabs-audio-content-instruction">
+									<div class="tabs-audio-content-instruction-inner">
+											{{{compile instruction}}}
 									</div>
 							</div>
 							{{/if}}
 						</div>
 						{{#if _graphic.src}}
-						<div class="tabAudio-content-item-graphic">
-							<img class="tabAudio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}" tabindex="0"/>
+						<div class="tabs-audio-content-item-graphic">
+							<img class="tabs-audio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}"/>
 						</div>
 						{{/if}}
 					</div>
@@ -39,11 +39,12 @@
 				{{/each}}
 			</div>
 		</div>
-		<div class="tabsAudio-navigation">
-			<div class="tabsAudio-navigation-inner">
+		<div class="tabs-audio-navigation">
+			<div class="tabs-audio-navigation-inner">
 				{{#each _items}}
-				<button class="base tabsAudio-navigation-item" role="button" tabindex="0" aria-label="{{{tabTitle}}} {{#if _isVisited}}. Visited{{/if}}" data-id="item-{{@index}}">
-					<div class="tabsAudio-navigation-item-inner">
+				<button class="base tabs-audio-navigation-item" data-id="item-{{@index}}">
+					<span class="aria-label">{{tabTitle}}.{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}</span>
+					<div class="tabs-audio-navigation-item-inner">
 						{{{compile tabTitle}}}
 					</div>
 				</button>

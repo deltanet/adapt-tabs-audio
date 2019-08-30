@@ -1,5 +1,5 @@
 .tabs-audio-component {
-	.tabsAudio-navigation {
+	.tabs-audio-navigation {
 		float: left;
 		width: 20%;
 
@@ -8,14 +8,14 @@
 		}
 	}
 
-	.tabsAudio-navigation-item {
+	.tabs-audio-navigation-item {
 		display: block;
 		margin-bottom: 1px;
 		position: relative;
 		text-decoration: none;
 	}
 
-	.tabsAudio-navigation-item-inner {
+	.tabs-audio-navigation-item-inner {
 		background-color: @item-color;
 		border-radius: 20px 0 0 20px;
 		color: @item-text-color;
@@ -83,10 +83,6 @@
 			width: 0;
 			z-index: 1;
 
-			.ie8 & {
-				display: none;
-			}
-
 			.dir-rtl & {
 				border-left-color: transparent;
 				border-right-color: @item-color;
@@ -97,7 +93,7 @@
 		}
 	}
 
-	.tabsAudio-content-items {
+	.tabs-audio-content-items {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
@@ -114,7 +110,7 @@
 		}
 	}
 
-	.tabAudio-content {
+	.tabs-audio-content {
 		display: none;
 
 		&.active {
@@ -122,18 +118,18 @@
 		}
 
 		&.fullwidth {
-			.tabAudio-content-text,
-			.tabAudio-content-item-graphic {
+			.tabs-audio-content-text,
+			.tabs-audio-content-item-graphic {
 				width: 100%;
 			}
 		}
 	}
 
-	.tabsAudio-content-items-inner {
+	.tabs-audio-content-items-inner {
 		padding: @item-padding;
 	}
 
-	.tabAudio-content-text {
+	.tabs-audio-content-text {
 		float: left;
 		.dir-rtl & {
 			float: right;
@@ -142,11 +138,11 @@
 		margin-bottom: @item-padding;
 	}
 
-	.tabAudio-content-item-title {
+	.tabs-audio-content-item-title {
 		margin-bottom: @item-padding;
 	}
 
-	.tabAudio-content-instruction {
+	.tabs-audio-content-instruction {
 			font-weight: bold;
 			margin-bottom: @component-instruction-margin-bottom;
 
@@ -155,14 +151,14 @@
 			}
 	}
 
-	.tabAudio-content-item-graphic {
+	.tabs-audio-content-item-graphic {
 	    width: 48%;
 			float: right;
 			.dir-rtl & {
 				float: left;
 			}
 	}
-	.tabAudio-content-item-graphic-inner {
+	.tabs-audio-content-item-graphic-inner {
 	    float: right;
 			.dir-rtl & {
 				float: left;
@@ -170,24 +166,24 @@
 	}
 
 	// Top Layout
-	&.tabAudio-layout-top {
-		.tabsAudio-widget {
+	&.tabs-audio-layout-top {
+		.tabs-audio-widget {
 			padding-top: 50px;
 			position: relative;
 		}
 
-		.tabsAudio-navigation {
+		.tabs-audio-navigation {
 			float: none;
 			position: absolute;
 			top: 0;
 			width: 100%;
 		}
 
-		.tabsAudio-navigation-item {
+		.tabs-audio-navigation-item {
 			float: left;
 
 			&:last-child {
-				.tabsAudio-navigation-item-inner {
+				.tabs-audio-navigation-item-inner {
 					margin-right: 0;
 
 					.dir-rtl & {
@@ -201,7 +197,7 @@
 			}
 		}
 
-		.tabsAudio-navigation-item-inner {
+		.tabs-audio-navigation-item-inner {
 			border-radius: 20px 20px 0 0;
 			margin-right: 2px;
 
@@ -215,7 +211,7 @@
 			}
 		}
 
-		.tabsAudio-content-items {
+		.tabs-audio-content-items {
 			float: none;
 			overflow: auto;
 			width: 100%;
@@ -223,47 +219,47 @@
 	}
 
 	@media all and (max-width: @device-width-medium) {
-		.tabAudio-content-text {
+		.tabs-audio-content-text {
 			width: 100%;
 		}
-		.tabAudio-content-item-body {
+		.tabs-audio-content-item-body {
 			width: 100%;
 		  padding-right: 0px;
 		}
-		.tabAudio-content-item-graphic {
+		.tabs-audio-content-item-graphic {
 		  width: 100%;
 		}
-		.tabsAudio-navigation {
+		.tabs-audio-navigation {
 			width: 25%;
 		}
-		.tabsAudio-navigation-item-inner {
+		.tabs-audio-navigation-item-inner {
 			&:after {
 				display: none;
 			}
 		}
-		.tabsAudio-content-items {
+		.tabs-audio-content-items {
 			width: 75%;
 		}
 	}
 
 	@media all and (max-width: @device-width-small) {
-		.tabAudio-content-text {
+		.tabs-audio-content-text {
 			width: 100%;
 		}
-		.tabAudio-content-item-body {
+		.tabs-audio-content-item-body {
 			width: 100%;
 		  padding-right: 0px;
 		}
-		.tabAudio-content-item-graphic {
+		.tabs-audio-content-item-graphic {
 		  width: 100%;
 		}
-		.tabsAudio-navigation {
+		.tabs-audio-navigation {
 			width: 30%;
 		}
-		.tabsAudio-content-items {
+		.tabs-audio-content-items {
 			width: 70%;
 		}
-		.tabsAudio-content-items-inner {
+		.tabs-audio-content-items-inner {
 			padding: @item-padding;
 		}
 	}
