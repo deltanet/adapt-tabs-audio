@@ -73,6 +73,8 @@ define(function(require) {
 			this.setTabSelectedAtIndex(index);
 			this.setVisited($(event.currentTarget).index());
 
+			this.model.set("_stage", index);
+
 			var currentItem = this.getCurrentItem(index);
 
 			///// Audio /////
