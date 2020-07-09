@@ -10,6 +10,7 @@
     "body": "Body text.",
     "instruction": "Select the tabs to find out more.",
     "_tabLayout": "top",
+    "_showBorder": true,
     "_items": [
         {
             "tabTitle": "Tab Title 1",

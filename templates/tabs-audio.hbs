@@ -1,7 +1,7 @@
 <div class="tabs-audio-inner component-inner">
 	{{> component this}}
 	<div class="tabs-audio-widget component-widget clearfix">
-		<div class="tabs-audio-content-items">
+		<div class="tabs-audio-content-items{{#if _showBorder}} border-enabled{{/if}}">
 			<div class="tabs-audio-content-items-inner">
 				{{#each _items}}
 				<div class="tabs-audio-content item-{{@index}}">

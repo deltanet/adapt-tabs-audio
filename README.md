@@ -38,6 +38,8 @@ The attributes listed below are used in *components.json* to configure **Tabs**,
 
 **_tabLayout** (string): Defines the layout of the tabs. Acceptable values are `left` and `top`. By default, component displays `left` layout for medium screen size and below.
 
+**_showBorder** (boolean): If set to `true`, a border will be added around the item content.
+
 **_items** (array): Multiple items may be created. Each _item_ represents one element of the tabs component and contains values for **tabTitle**, **title**, **body**, and **_graphic**.
 
 >**tabTitle** (string): This text is displayed in the actual tab heading. Recommendation to keep this title short.
@@ -62,7 +64,7 @@ The attributes listed below are used in *components.json* to configure **Tabs**,
 **tabTitle** headings will be replaced by **...** if the heading is too long for the container.
 
 ----------------------------
-**Version number:**  3.0.1  
+**Version number:**  3.1.0  
 **Framework versions:** 4+  
 **Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   

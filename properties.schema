@@ -40,6 +40,14 @@
       "validators": ["required"],
       "help": "This sets the tabs visual layout"
     },
+    "_showBorder": {
+      "type":"boolean",
+      "required": false,
+      "default": true,
+      "title": "Show Border",
+      "inputType": "Checkbox",
+      "validators": []
+    },
     "_items": {
       "type": "array",
       "required": true,
