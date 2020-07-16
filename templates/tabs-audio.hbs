@@ -1,6 +1,18 @@
 <div class="tabs-audio-inner component-inner">
 	{{> component this}}
 	<div class="tabs-audio-widget component-widget clearfix">
+		<div class="tabs-audio-navigation">
+			<div class="tabs-audio-navigation-inner">
+				{{#each _items}}
+				<button class="base tabs-audio-navigation-item" data-id="item-{{@index}}">
+					<span class="aria-label">{{tabTitle}}.{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}</span>
+					<div class="tabs-audio-navigation-item-inner">
+						{{{compile tabTitle}}}
+					</div>
+				</button>
+				{{/each}}
+			</div>
+		</div>
 		<div class="tabs-audio-content-items{{#if _showBorder}} border-enabled{{/if}}">
 			<div class="tabs-audio-content-items-inner">
 				{{#each _items}}
@@ -36,18 +48,6 @@
 						{{/if}}
 					</div>
 				</div>
-				{{/each}}
-			</div>
-		</div>
-		<div class="tabs-audio-navigation">
-			<div class="tabs-audio-navigation-inner">
-				{{#each _items}}
-				<button class="base tabs-audio-navigation-item" data-id="item-{{@index}}">
-					<span class="aria-label">{{tabTitle}}.{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}</span>
-					<div class="tabs-audio-navigation-item-inner">
-						{{{compile tabTitle}}}
-					</div>
-				</button>
 				{{/each}}
 			</div>
 		</div>
