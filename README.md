@@ -60,8 +60,8 @@ The attributes listed below are used in *components.json* to configure **Tabs**,
 **Tabs** has been assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**. This label is not a visible element. It is utilized by assistive technology such as screen readers. Should the region's text need to be customised, it can be found within the **globals** object in course.json.
 
 ----------------------------
-**Version number:**  3.1.1  
-**Framework versions:** 4+  
+**Version number:**  4.0.0  
+**Framework versions:** 5+  
 **Author / maintainer:** DeltaNet  
 **Accessibility support:** WAI AA   
 **RTL support:** Yes  
