@@ -1,4 +1,4 @@
-.tabs-audio-component {
+.tabs-audio {
 	.tabs-audio-navigation {
 		float: left;
 		width: 20%;
@@ -18,24 +18,19 @@
 	.tabs-audio-navigation-item-inner {
 		background-color: @item-color;
 		border-radius: 20px 0 0 20px;
-		color: @item-text-color;
+		color: @item-color-inverted;
 		display: block;
 		overflow: hidden;
-		padding: @button-padding;
+		padding: @btn-padding;
 		word-wrap: break-word;
 
 		.dir-rtl & {
 			border-radius: 0 20px 20px 0;
 		}
 
-		&.visited {
-			background-color: @item-color-visited;
-			color: @item-text-color-visited;
-		}
-
 		&.selected {
 			background-color: @item-color-selected;
-			color: @item-text-color-selected;
+			color: @item-color-inverted-selected;
 
 			&:after {
 				border-left-color: @item-color-selected;
@@ -52,16 +47,16 @@
 
 		.no-touch &:hover {
 			background-color: @item-color-hover;
-			color: @item-text-color-hover;
+			color: @item-color-inverted-hover;
 
 			&.visited {
 				background-color: @item-color-hover;
-				color: @item-text-color-hover;
+				color: @item-color-inverted-hover;
 			}
 
 			&.selected {
 				background-color: @item-color-hover;
-				color: @item-text-color-hover;
+				color: @item-color-inverted-hover;
 			}
 		}
 
@@ -96,8 +91,8 @@
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		background-color: @background-color;
-		padding-bottom: @component-padding;
+		background-color: @item-color;
+		padding-bottom: @item-padding;
 		float: right;
 		overflow: auto;
 		position: relative;
@@ -146,10 +141,10 @@
 
 	.tabs-audio-content-instruction {
 			font-weight: bold;
-			margin-bottom: @component-instruction-margin-bottom;
+			margin-bottom: @item-margin;
 
 			instr {
-					color: @button-color;
+					color: @btn-color;
 			}
 	}
 

@@ -12,7 +12,7 @@ define([
 
 		preRender: function() {
 			// Listen for text change on audio extension
-      this.listenTo(Adapt, "audio:changeText", this.replaceText);
+      this.listenTo(Adapt, 'audio:changeText', this.replaceText);
 		},
 
 		postRender: function() {
@@ -29,17 +29,17 @@ define([
 
 		setLayout: function() {
 
-			this.$el.removeClass("tabs-audio-layout-left tabs-audio-layout-top");
+			this.$el.removeClass('tabs-audio-layout-left tabs-audio-layout-top');
 			if (Adapt.device.screenSize == 'large') {
 				var tabLayout = this.model.get('_tabLayout');
-				this.$el.addClass("tabs-audio-layout-" + tabLayout);
+				this.$el.addClass('tabs-audio-layout-' + tabLayout);
 				if (tabLayout === 'top') {
 					this.setTabLayoutTop();
 				} else if (tabLayout === 'left') {
 					this.setTabLayoutLeft();
 				}
 			} else {
-				this.$el.addClass("tabs-audio-layout-left");
+				this.$el.addClass('tabs-audio-layout-left');
 				this.setTabLayoutLeft();
 			}
 
@@ -99,7 +99,7 @@ define([
 			var currentItem = this.getCurrentItem(index);
 
 			///// Audio /////
-      if (this.model.has('_audio') && this.model.get('_audio')._isEnabled && Adapt.audio.audioClip[this.model.get('_audio')._channel].status==1) {
+      if (Adapt.audio && this.model.has('_audio') && this.model.get('_audio')._isEnabled && Adapt.audio.audioClip[this.model.get('_audio')._channel].status==1) {
 				// Reset onscreen id
 				Adapt.audio.audioClip[this.model.get('_audio')._channel].onscreenID = "";
         // Trigger audio
@@ -127,7 +127,7 @@ define([
 
 		setTabSelectedAtIndex: function(index) {
 			var $navigationItem = this.$('.tabs-audio-navigation-item-inner');
-			$navigationItem.removeClass('selected').eq(index).addClass('selected visited').attr('aria-label', this.model.get("_items")[index].tabTitle + ". Visited");
+			$navigationItem.removeClass('selected').eq(index).addClass('selected visited').attr('aria-label', this.model.get('_items')[index].tabTitle + '. Visited');
 			this.setVisited(index);
 		},
 
@@ -152,7 +152,7 @@ define([
 		// Reduced text
     replaceText: function(value) {
       // If enabled
-      if (this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
+      if (Adapt.audio && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
         // Change each items title and body
         for (var i = 0; i < this.model.get('_items').length; i++) {
           if(value == 0) {
