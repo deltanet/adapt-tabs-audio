@@ -7,7 +7,7 @@ define([
 	var TabsAudioView = ComponentView.extend({
 
 		events: {
-			'click .tabs-audio-navigation-item': 'onTabItemClicked'
+			'click .js-tabs-audio-navigation': 'onTabItemClicked'
 		},
 
 		preRender: function() {
@@ -22,7 +22,7 @@ define([
 			this.showContentItemAtIndex(0, true);
 			this.setTabSelectedAtIndex(0);
 
-			if (this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
+			if (Adapt.audio && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
 				this.replaceText(Adapt.audio.textSize);
       }
 		},
@@ -116,10 +116,10 @@ define([
 
 		showContentItemAtIndex: function(index, skipFocus) {
 			var $contentItems = this.$('.tabs-audio-content');
-			$contentItems.removeClass('active');
+			$contentItems.removeClass('is-active');
 
 			var $contentItem = $contentItems.eq(index);
-			$contentItem.addClass('active');
+			$contentItem.addClass('is-active');
 
 			if (skipFocus) return;
 			$contentItem.a11y_focus();
@@ -127,7 +127,7 @@ define([
 
 		setTabSelectedAtIndex: function(index) {
 			var $navigationItem = this.$('.tabs-audio-navigation-item-inner');
-			$navigationItem.removeClass('selected').eq(index).addClass('selected visited').attr('aria-label', this.model.get('_items')[index].tabTitle + '. Visited');
+			$navigationItem.removeClass('is-selected').eq(index).addClass('is-selected is-visited').attr('aria-label', this.model.get('_items')[index].tabTitle + '.is-visited');
 			this.setVisited(index);
 		},
 
