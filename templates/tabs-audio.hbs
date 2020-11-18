@@ -4,7 +4,7 @@
 		<div class="tabs-audio-navigation">
 			<div class="tabs-audio-navigation-inner">
 				{{#each _items}}
-				<button class="base tabs-audio-navigation-item js-tabs-audio-navigation" data-id="item-{{@index}}">
+				<button class="tabs-audio-navigation-item js-tabs-audio-navigation" data-id="item-{{@index}}">
 					<span class="aria-label">{{tabTitle}}.{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}</span>
 					<div class="tabs-audio-navigation-item-inner">
 						{{{compile tabTitle}}}
