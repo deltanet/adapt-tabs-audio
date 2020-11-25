@@ -1,4 +1,8 @@
 .tabs-audio {
+	.tabs-audio-widget {
+		margin-top: @item-padding;
+	}
+
 	.tabs-audio-navigation {
 		float: left;
 		width: 20%;
@@ -148,12 +152,13 @@
 	}
 
 	.tabs-audio-content-instruction {
-			font-weight: bold;
-			margin-bottom: @item-margin;
+		margin-top: @item-padding;
+		margin-bottom: @item-padding;
+		.instruction-text;
 
-			instr {
-					color: @btn-color;
-			}
+		instr {
+			color: @btn-color;
+		}
 	}
 
 	.tabs-audio-content-item-graphic {
