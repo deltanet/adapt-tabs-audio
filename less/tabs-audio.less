@@ -1,4 +1,8 @@
-.tabs-audio-component {
+.tabs-audio {
+	.tabs-audio-widget {
+		margin-top: @item-padding;
+	}
+
 	.tabs-audio-navigation {
 		float: left;
 		width: 20%;
@@ -13,29 +17,31 @@
 		margin-bottom: 1px;
 		position: relative;
 		text-decoration: none;
+		background-color: transparent;
 	}
 
 	.tabs-audio-navigation-item-inner {
 		background-color: @item-color;
 		border-radius: 20px 0 0 20px;
-		color: @item-text-color;
+		color: @item-color-inverted;
 		display: block;
 		overflow: hidden;
-		padding: @button-padding;
+		padding: @btn-padding;
 		word-wrap: break-word;
+		.button-text;
 
 		.dir-rtl & {
 			border-radius: 0 20px 20px 0;
 		}
 
-		&.visited {
-			background-color: @item-color-visited;
-			color: @item-text-color-visited;
+		&.is-visited {
+			background-color: @visited;
+			color: @visited-inverted;
 		}
 
-		&.selected {
+		&.is-selected {
 			background-color: @item-color-selected;
-			color: @item-text-color-selected;
+			color: @item-color-inverted-selected;
 
 			&:after {
 				border-left-color: @item-color-selected;
@@ -52,16 +58,16 @@
 
 		.no-touch &:hover {
 			background-color: @item-color-hover;
-			color: @item-text-color-hover;
+			color: @item-color-inverted-hover;
 
-			&.visited {
-				background-color: @item-color-hover;
-				color: @item-text-color-hover;
+			&.is-visited {
+				background-color: @visited;
+				color: @visited-inverted;
 			}
 
-			&.selected {
-				background-color: @item-color-hover;
-				color: @item-text-color-hover;
+			&.is-selected {
+				background-color: @item-color-selected;
+				color: @item-color-inverted-selected;
 			}
 		}
 
@@ -96,8 +102,8 @@
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		background-color: @background-color;
-		padding-bottom: @component-padding;
+		background-color: @font-color-inverted;
+		padding-bottom: @item-padding;
 		float: right;
 		overflow: auto;
 		position: relative;
@@ -115,7 +121,7 @@
 	.tabs-audio-content {
 		display: none;
 
-		&.active {
+		&.is-active {
 			display: block;
 		}
 
@@ -142,15 +148,17 @@
 
 	.tabs-audio-content-item-title {
 		margin-bottom: @item-padding;
+		.item-title;
 	}
 
 	.tabs-audio-content-instruction {
-			font-weight: bold;
-			margin-bottom: @component-instruction-margin-bottom;
+		margin-top: @item-padding;
+		margin-bottom: @item-padding;
+		.instruction-text;
 
-			instr {
-					color: @button-color;
-			}
+		instr {
+			color: @btn-color;
+		}
 	}
 
 	.tabs-audio-content-item-graphic {
