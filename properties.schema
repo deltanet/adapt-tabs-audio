@@ -158,7 +158,9 @@
                 "default": "",
                 "title": "Audio",
                 "inputType": "Asset:audio",
-                "validators": []
+                "validators": [],
+                "audioSources": ["_items/#/body"],
+                "audioConditions": []
               }
             }
           }
