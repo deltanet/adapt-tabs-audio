@@ -28,19 +28,12 @@ define([
     },
 
     setLayout: function() {
-
       this.$el.removeClass('tabs-audio-layout-left tabs-audio-layout-top');
+
       if (Adapt.device.screenSize == 'large') {
-        var tabLayout = this.model.get('_tabLayout');
-        this.$el.addClass('tabs-audio-layout-' + tabLayout);
-        if (tabLayout === 'top') {
-          this.setTabLayoutTop();
-        } else if (tabLayout === 'left') {
-          this.setTabLayoutLeft();
-        }
+        this.$el.addClass('tabs-audio-layout-' + this.model.get('_tabLayout'));
       } else {
         this.$el.addClass('tabs-audio-layout-left');
-        this.setTabLayoutLeft();
       }
 
       // Check if just an image or just text is used in an item
@@ -49,44 +42,6 @@ define([
           this.$('.item-' + i).addClass("fullwidth");
         }
       }
-
-    },
-
-    setTabLayoutTop: function() {
-      var itemsLength = this.model.get('_items').length;
-      var itemWidth = 100 / itemsLength;
-
-      this.$('.tabs-audio-navigation-item').css({
-        width: itemWidth + '%'
-      });
-
-      var titleHeight = 0;
-      var titlePadding = 0;
-
-      var titleArray = [];
-
-      var $element = this.$('.tabs-audio-navigation-item');
-      // Reset
-      $element.find('.tabs-audio-navigation-item-inner').css('min-height', "");
-
-      for (var i = 0; i < itemsLength; i++) {
-        titlePadding = this.$('[data-id="item-' + i + '"]').outerHeight() - this.$('[data-id="item-' + i + '"]').height();
-        titleArray[i] = this.$('[data-id="item-' + i + '"]').find('.tabs-audio-navigation-item-inner').height();
-
-        if (titleArray[i] > titleHeight) {
-          titleHeight = titleArray[i];
-        }
-      }
-
-      $element.find('.tabs-audio-navigation-item-inner').css('min-height', titleHeight);
-    },
-
-    setTabLayoutLeft: function() {
-      this.$('.tabs-audio-navigation-item').css({
-        width: 100 + '%'
-      });
-
-      this.$('.tabs-audio-navigation-item-inner').css('min-height', "");
     },
 
     onTabItemClicked: function(event) {
@@ -126,7 +81,7 @@ define([
     },
 
     setTabSelectedAtIndex: function(index) {
-      var $navigationItem = this.$('.tabs-audio-navigation-item-inner');
+      var $navigationItem = this.$('.tabs-audio-navigation-item');
       $navigationItem.removeClass('is-selected').eq(index).addClass('is-selected is-visited').attr('aria-label', this.model.get('_items')[index].tabTitle + '.is-visited');
       this.setVisited(index);
     },

@@ -1,6 +1,6 @@
 .tabs-audio {
 	.tabs-audio-widget {
-		margin-top: @item-padding;
+		margin-top: @component-body-margin;
 	}
 
 	.tabs-audio-navigation {
@@ -17,22 +17,15 @@
 		margin-bottom: 1px;
 		position: relative;
 		text-decoration: none;
-		background-color: transparent;
-	}
-
-	.tabs-audio-navigation-item-inner {
+		color: @item-color-inverted;
 		background-color: @item-color;
 		border-radius: 20px 0 0 20px;
-		color: @item-color-inverted;
-		display: block;
-		overflow: hidden;
-		padding: @btn-padding;
-		word-wrap: break-word;
-		.button-text;
 
 		.dir-rtl & {
 			border-radius: 0 20px 20px 0;
 		}
+
+		padding: @btn-padding;
 
 		&.is-visited {
 			background-color: @visited;
@@ -98,12 +91,19 @@
 		}
 	}
 
+	.tabs-audio-navigation-item-inner {
+		display: block;
+		overflow: hidden;
+		word-wrap: break-word;
+		.button-text;
+	}
+
 	.tabs-audio-content-items {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		background-color: @font-color-inverted;
-		padding-bottom: @item-padding;
+		padding-bottom: @component-body-margin;
 		float: right;
 		overflow: auto;
 		position: relative;
@@ -134,7 +134,7 @@
 	}
 
 	.tabs-audio-content-items-inner {
-		padding: @item-padding;
+		padding: @component-body-margin;
 	}
 
 	.tabs-audio-content-text {
@@ -143,17 +143,16 @@
 			float: right;
 		}
 		width: 50%;
-		margin-bottom: @item-padding;
 	}
 
 	.tabs-audio-content-item-title {
-		margin-bottom: @item-padding;
+		margin-bottom: @component-body-margin;
 		.item-title;
 	}
 
 	.tabs-audio-content-instruction {
-		margin-top: @item-padding;
-		margin-bottom: @item-padding;
+		margin-top: @component-body-margin;
+		margin-bottom: @component-body-margin;
 		.instruction-text;
 
 		instr {
@@ -185,9 +184,16 @@
 			width: 100%;
 		}
 
+		.tabs-audio-navigation-inner {
+			display: flex;
+		}
+
 		.tabs-audio-navigation-item {
-			float: left;
+			flex: 1;
 			margin-bottom: 0;
+
+			border-radius: 20px 20px 0 0;
+			margin-right: 2px;
 
 			&:last-child {
 				.tabs-audio-navigation-item-inner {
@@ -199,22 +205,8 @@
 				}
 			}
 
-			.dir-rtl & {
-				float: right;
-			}
-		}
-
-		.tabs-audio-navigation-item-inner {
-			border-radius: 20px 20px 0 0;
-			margin-right: 2px;
-
 			&:after {
 				display: none;
-			}
-
-			.dir-rtl & {
-				margin-right: auto;
-				margin-left: 2px;
 			}
 		}
 
@@ -222,6 +214,21 @@
 			float: none;
 			overflow: auto;
 			width: 100%;
+		}
+	}
+
+	// Left Layout
+	&.tabs-audio-layout-left {
+		.tabs-audio-widget {
+			display: flex;
+		}
+
+		.tabs-audio-navigation-item {
+			width: 100%;
+		}
+
+		.tabs-audio-content-item-graphic {
+			margin-top: @component-body-margin;
 		}
 	}
 
@@ -267,7 +274,7 @@
 			width: 70%;
 		}
 		.tabs-audio-content-items-inner {
-			padding: @item-padding;
+			padding: @component-body-margin;
 		}
 	}
 }
