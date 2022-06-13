@@ -11,26 +11,41 @@ class TabsView extends ComponentView {
 
   initialize(...args) {
     super.initialize(...args);
-
-    this.setUpEventListeners();
   }
 
-  setUpEventListeners() {
-    this.listenTo(Adapt, 'device:resize', this.setLayout);
-    this.listenTo(Adapt, 'audio:changeText', this.replaceText);
+  preRender() {
+    this.listenTo(Adapt, {
+      'device:resize': this.setLayout,
+      'audio:changeText': this.replaceText
+    });
 
     this.listenTo(this.model.getChildren(), {
       'change:_isActive': this.onItemsActiveChange,
       'change:_isVisited': this.onItemsVisitedChange
     });
+
+    this.checkIfResetOnRevisit();
+  }
+
+  onItemsActiveChange(item, isActive) {
+    if (!isActive) return;
+    this.setStage(item);
   }
 
   postRender() {
-    this.setLayout();
+    const items = this.model.getChildren();
+    if (!items || !items.length) return;
 
-    this.showContentItemAtIndex(0, true);
-    this.setTabSelectedAtIndex(0);
-    this.setTabVisitedAtIndex(0);
+    let activeItem = this.model.getActiveItem();
+    if (!activeItem) {
+      activeItem = this.model.getItem(0);
+      activeItem.toggleActive(true);
+    } else {
+      // manually trigger change as it is not fired on reentry
+      items.trigger('change:_isActive', activeItem, true);
+    }
+
+    this.setLayout();
 
     if (Adapt.audio && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
       this.replaceText(Adapt.audio.textSize);
@@ -39,6 +54,14 @@ class TabsView extends ComponentView {
     this.$('.tabs-audio__widget').imageready(this.setReadyStatus.bind(this));
     if (this.model.get('_setCompletionOn') !== 'inview') return;
     this.setupInviewCompletion('.component__widget');
+  }
+
+  checkIfResetOnRevisit() {
+    const isResetOnRevisit = this.model.get('_isResetOnRevisit');
+    // If reset is enabled set defaults
+    if (isResetOnRevisit) {
+      this.model.reset(isResetOnRevisit);
+    }
   }
 
   setLayout() {
@@ -73,48 +96,35 @@ class TabsView extends ComponentView {
       // Trigger audio
       Adapt.trigger('audio:playAudio', currentItem._audio.src, this.model.get('_id'), this.model.get('_audio')._channel);
     }
-    ///// End of Audio /////
   }
 
-  ///// Audio /////
   getCurrentItem(index) {
     return this.model.get('_items')[index];
-  }
-  ///// End of Audio /////
-
-  onItemsActiveChange(item, isActive) {
-    if (!isActive) return;
-
-    const index = item.get('_index');
-
-    this.showContentItemAtIndex(index);
-    this.setTabSelectedAtIndex(index);
   }
 
   onItemsVisitedChange(item, _isVisited) {
     if (!_isVisited) return;
+
     this.$(`[data-index="${item.get('_index')}"]`).addClass('is-visited');
+
+    // Append the word 'visited' to the item's aria-label
+    const visitedLabel = this.model.get('_globals')._accessibility._ariaLabels.visited + '.';
+    this.$(`[data-index="${item.get('_index')}"]`).find('.aria-label').each(function(index, ariaLabel) {
+      ariaLabel.innerHTML += ' ' + visitedLabel;
+    });
   }
 
-  showContentItemAtIndex(index, skipFocus) {
+  setStage(item) {
+    const index = item.get('_index');
+    const indexSelector = `[data-index="${index}"]`;
+
+    item.toggleVisited(true);
+
     const $contentItems = this.$('.tabs-audio-content');
     $contentItems.removeClass('is-active');
 
     const $contentItem = $contentItems.eq(index);
     $contentItem.addClass('is-active');
-
-    if (skipFocus) return;
-    Adapt.a11y.focusFirst($contentItem);
-  }
-
-  setTabSelectedAtIndex(index) {
-    const $navigationItem = this.$('.tabs-audio-navigation-item');
-    $navigationItem.removeClass('is-selected').eq(index).addClass('is-selected').attr('aria-label', this.model.get('_items')[index].tabTitle + ' .Visited');
-  }
-
-  setTabVisitedAtIndex(index) {
-    const $navigationItem = this.$('.tabs-audio-navigation-item');
-    $navigationItem.eq(index).addClass('is-visited').attr('aria-label', this.model.get('_items')[index].tabTitle + '. Visited');
   }
 
   // Reduced text
