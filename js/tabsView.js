@@ -30,6 +30,7 @@ class TabsView extends ComponentView {
 
     this.showContentItemAtIndex(0, true);
     this.setTabSelectedAtIndex(0);
+    this.setTabVisitedAtIndex(0);
 
     if (Adapt.audio && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
       this.replaceText(Adapt.audio.textSize);
@@ -108,7 +109,12 @@ class TabsView extends ComponentView {
 
   setTabSelectedAtIndex(index) {
     const $navigationItem = this.$('.tabs-audio-navigation-item');
-    $navigationItem.removeClass('is-selected').eq(index).addClass('is-selected').attr('aria-label', this.model.get('_items')[index].tabTitle + '.is-visited');
+    $navigationItem.removeClass('is-selected').eq(index).addClass('is-selected').attr('aria-label', this.model.get('_items')[index].tabTitle + ' .Visited');
+  }
+
+  setTabVisitedAtIndex(index) {
+    const $navigationItem = this.$('.tabs-audio-navigation-item');
+    $navigationItem.eq(index).addClass('is-visited').attr('aria-label', this.model.get('_items')[index].tabTitle + '. Visited');
   }
 
   // Reduced text
