@@ -1,49 +1,49 @@
 <div class="component__inner tabs-audio-inner">
 	{{> component this}}
-	<div class="component__widget tabs-audio-widget u-clearfix">
-		<div class="tabs-audio-navigation">
-			<div class="tabs-audio-navigation-inner">
+	<div class="component__widget tabs-audio__widget u-clearfix">
+		<div class="tabs-audio__navigation">
+			<div class="tabs-audio__navigation-inner">
 				{{#each _items}}
-				<button class="tabs-audio-navigation-item js-tabs-audio-navigation" data-index="{{@index}}">
+				<button class="tabs-audio__navigation-item js-tabs-audio-navigation" data-index="{{@index}}">
 					<span class="aria-label">{{tabTitle}}.{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}</span>
-					<div class="tabs-audio-navigation-item-inner">
+					<span class="tabs-audio__navigation-item-inner">
 						{{{compile tabTitle}}}
-					</div>
+					</span>
 				</button>
 				{{/each}}
 			</div>
 		</div>
-		<div class="tabs-audio-content-items{{#if _showBorder}} border-enabled{{/if}}">
-			<div class="tabs-audio-content-items-inner">
+		<div class="tabs-audio__items{{#if _showBorder}} border-enabled{{/if}}">
+			<div class="tabs-audio__items-inner">
 				{{#each _items}}
-				<div class="tabs-audio-content item-{{@index}}">
-					<div class="tabs-audio-content-inner">
-						<div class="tabs-audio-content-text">
+				<div class="tabs-audio-item item-{{@index}}">
+					<div class="tabs-audio-item__inner">
+						<div class="tabs-audio-item__text">
 							{{#if title}}
-							<div class="tabs-audio-content-item-title">
-								<div class="tabs-audio-content-item-title-inner" role="heading" aria-level="5">
+							<div class="tabs-audio-item__title">
+								<div class="tabs-audio-item__title-inner" role="heading" aria-level="5">
 									{{{compile title}}}
 								</div>
 							</div>
 							{{/if}}
 							{{#if body}}
-							<div class="tabs-audio-content-item-body">
-								<div class="tabs-audio-content-item-body-inner">
+							<div class="tabs-audio-item__body">
+								<div class="tabs-audio-item__body-inner">
 									{{{compile body}}}
 								</div>
 							</div>
 							{{/if}}
 							{{#if instruction}}
-							<div class="tabs-audio-content-instruction">
-									<div class="tabs-audio-content-instruction-inner">
-											{{{compile instruction}}}
-									</div>
+							<div class="tabs-audio-item__instruction">
+								<div class="tabs-audio-item__instruction-inner">
+									{{{compile instruction}}}
+								</div>
 							</div>
 							{{/if}}
 						</div>
 						{{#if _graphic.src}}
-						<div class="tabs-audio-content-item-graphic">
-							<img class="tabs-audio-content-item-graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}"/>
+						<div class="tabs-audio-item__graphic">
+							<img class="tabs-audio-item__graphic-inner" src="{{{_graphic.src}}}" alt="{{{_graphic.alt}}}"/>
 						</div>
 						{{/if}}
 					</div>

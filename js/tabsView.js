@@ -1,4 +1,5 @@
 import Adapt from 'core/js/adapt';
+import device from 'core/js/device';
 import ComponentView from 'core/js/views/componentView';
 
 class TabsView extends ComponentView {
@@ -67,7 +68,7 @@ class TabsView extends ComponentView {
   setLayout() {
     this.$el.removeClass('tabs-audio-layout-left tabs-audio-layout-top');
 
-    if (Adapt.device.screenSize == 'large') {
+    if (device.screenSize == 'large') {
       this.$el.addClass('tabs-audio-layout-' + this.model.get('_tabLayout'));
     } else {
       this.$el.addClass('tabs-audio-layout-left');
@@ -120,11 +121,11 @@ class TabsView extends ComponentView {
 
     item.toggleVisited(true);
 
-    const $contentItems = this.$('.tabs-audio-content');
-    $contentItems.removeClass('is-active');
+    const $items = this.$('.tabs-audio-item');
+    $items.removeClass('is-active');
 
-    const $contentItem = $contentItems.eq(index);
-    $contentItem.addClass('is-active');
+    const $item = $items.eq(index);
+    $item.addClass('is-active');
   }
 
   // Reduced text
@@ -134,13 +135,13 @@ class TabsView extends ComponentView {
       // Change each items title and body
       for (let i = 0; i < this.model.get('_items').length; i++) {
         if (value == 0) {
-          this.$('.tabs-audio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitle);
-          this.$('.tabs-audio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].title);
-          this.$('.tabs-audio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].body);
+          this.$('.tabs-audio__navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitle);
+          this.$('.tabs-audio-item__title-inner').eq(i).html(this.model.get('_items')[i].title);
+          this.$('.tabs-audio-item__body-inner').eq(i).html(this.model.get('_items')[i].body);
         } else {
-          this.$('.tabs-audio-navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitleReduced);
-          this.$('.tabs-audio-content-item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced);
-          this.$('.tabs-audio-content-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced);
+          this.$('.tabs-audio__navigation-item-inner').eq(i).html(this.model.get('_items')[i].tabTitleReduced);
+          this.$('.tabs-audio-item__title-inner').eq(i).html(this.model.get('_items')[i].titleReduced);
+          this.$('.tabs-audio-item__body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced);
         }
       }
     }

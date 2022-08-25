@@ -1,9 +1,9 @@
 .tabs-audio {
-	.tabs-audio-widget {
+	&__widget {
 		margin-top: @component-body-margin;
 	}
 
-	.tabs-audio-navigation {
+	&__navigation {
 		float: left;
 		width: 20%;
 
@@ -12,20 +12,19 @@
 		}
 	}
 
-	.tabs-audio-navigation-item {
+	&__navigation-item {
 		display: block;
 		margin-bottom: 1px;
 		position: relative;
 		text-decoration: none;
 		color: @item-color-inverted;
 		background-color: @item-color;
+		padding: (@btn-padding / 2) @btn-padding;
 		border-radius: 20px 0 0 20px;
 
 		.dir-rtl & {
 			border-radius: 0 20px 20px 0;
 		}
-
-		padding: @btn-padding;
 
 		&.is-visited {
 			background-color: @visited;
@@ -91,14 +90,14 @@
 		}
 	}
 
-	.tabs-audio-navigation-item-inner {
+	&__navigation-item-inner {
 		display: block;
 		overflow: hidden;
 		word-wrap: break-word;
 		.button-text;
 	}
 
-	.tabs-audio-content-items {
+	&__items {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
@@ -118,7 +117,11 @@
 		}
 	}
 
-	.tabs-audio-content {
+	&__items-inner {
+		padding: @component-body-margin;
+	}
+
+	.tabs-audio-item {
 		display: none;
 
 		&.is-active {
@@ -133,11 +136,7 @@
 		}
 	}
 
-	.tabs-audio-content-items-inner {
-		padding: @component-body-margin;
-	}
-
-	.tabs-audio-content-text {
+	.tabs-audio-item__text {
 		float: left;
 		.dir-rtl & {
 			float: right;
@@ -145,12 +144,12 @@
 		width: 50%;
 	}
 
-	.tabs-audio-content-item-title {
+	.tabs-audio-item__title {
 		margin-bottom: @component-body-margin;
 		.item-title;
 	}
 
-	.tabs-audio-content-instruction {
+	.tabs-audio-item__instruction {
 		margin-top: @component-body-margin;
 		margin-bottom: @component-body-margin;
 		.instruction-text;
@@ -160,35 +159,35 @@
 		}
 	}
 
-	.tabs-audio-content-item-graphic {
+	.tabs-audio-item__graphic {
 	    width: 48%;
-			float: right;
-			.dir-rtl & {
-				float: left;
-			}
+		float: right;
+		.dir-rtl & {
+			float: left;
+		}
 	}
-	.tabs-audio-content-item-graphic-inner {
+	.tabs-audio-item__graphic-inner {
 	    float: right;
-			.dir-rtl & {
-				float: left;
-			}
+		.dir-rtl & {
+			float: left;
+		}
 	}
 
 	// Top Layout
 	&.tabs-audio-layout-top {
-		.tabs-audio-widget {
+		.tabs-audio__widget {
 			position: relative;
 		}
 
-		.tabs-audio-navigation {
+		.tabs-audio__navigation {
 			width: 100%;
 		}
 
-		.tabs-audio-navigation-inner {
+		.tabs-audio__navigation-inner {
 			display: flex;
 		}
 
-		.tabs-audio-navigation-item {
+		.tabs-audio__navigation-item {
 			flex: 1;
 			margin-bottom: 0;
 
@@ -196,12 +195,10 @@
 			margin-right: 2px;
 
 			&:last-child {
-				.tabs-audio-navigation-item-inner {
-					margin-right: 0;
+				margin-right: 0;
 
-					.dir-rtl & {
-						margin-left: 0;
-					}
+				.dir-rtl & {
+					margin-left: 0;
 				}
 			}
 
@@ -210,7 +207,7 @@
 			}
 		}
 
-		.tabs-audio-content-items {
+		.tabs-audio__items {
 			float: none;
 			overflow: auto;
 			width: 100%;
@@ -219,61 +216,61 @@
 
 	// Left Layout
 	&.tabs-audio-layout-left {
-		.tabs-audio-widget {
+		.tabs-audio__widget {
 			display: flex;
 		}
 
-		.tabs-audio-navigation-item {
+		.tabs-audio__navigation-item {
 			width: 100%;
 		}
 
-		.tabs-audio-content-item-graphic {
+		.tabs-audio-item__graphic {
 			margin-top: @component-body-margin;
 		}
 	}
 
 	@media all and (max-width: @device-width-medium) {
-		.tabs-audio-content-text {
+		.tabs-audio-item__text {
 			width: 100%;
 		}
-		.tabs-audio-content-item-body {
+		.tabs-audio-item__body {
 			width: 100%;
-		  padding-right: 0px;
+			padding-right: 0px;
 		}
-		.tabs-audio-content-item-graphic {
+		.tabs-audio-item__graphic {
 		  width: 100%;
 		}
-		.tabs-audio-navigation {
+		.tabs-audio__navigation {
 			width: 25%;
 		}
-		.tabs-audio-navigation-item-inner {
+		.tabs-audio__navigation-item-inner {
 			&:after {
 				display: none;
 			}
 		}
-		.tabs-audio-content-items {
+		.tabs-audio__items {
 			width: 75%;
 		}
 	}
 
 	@media all and (max-width: @device-width-small) {
-		.tabs-audio-content-text {
+		.tabs-audio-item__text {
 			width: 100%;
 		}
-		.tabs-audio-content-item-body {
+		.tabs-audio-item__body {
 			width: 100%;
-		  padding-right: 0px;
+			padding-right: 0px;
 		}
-		.tabs-audio-content-item-graphic {
-		  width: 100%;
+		.tabs-audio-item__graphic {
+			width: 100%;
 		}
-		.tabs-audio-navigation {
+		.tabs-audio__navigation {
 			width: 30%;
 		}
-		.tabs-audio-content-items {
+		.tabs-audio__items {
 			width: 70%;
 		}
-		.tabs-audio-content-items-inner {
+		.tabs-audio__items-inner {
 			padding: @component-body-margin;
 		}
 	}
