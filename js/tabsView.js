@@ -123,6 +123,10 @@ class TabsView extends ComponentView {
     const $contentItems = this.$('.tabs-audio-content');
     $contentItems.removeClass('is-active');
 
+    const $tabItems = this.$('.tabs-audio-navigation-item');
+    $tabItems.removeClass('is-selected');
+    this.$(indexSelector).addClass('is-selected');
+
     const $contentItem = $contentItems.eq(index);
     $contentItem.addClass('is-active');
   }
